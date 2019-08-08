@@ -1,6 +1,6 @@
 ![VendorList logo](https://i.imgur.com/zumqNse.png "VendorList")
 
-An online marketplace to sell website maintenance services. Much like Upwork, but with only the most vetted, handpicked experts and free project management
+Meet & hire amazing talent from our invite-only community of elite web developers, designers, and marketers.
 
 ### Codebase
 #### Technologies
