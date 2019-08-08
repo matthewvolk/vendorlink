@@ -26,7 +26,7 @@ export default ({ children, title, description }) => (
         color: #1C262E;
         background: #FDFDFE;
         -webkit-font-smoothing: antialiased;
-        font-family: 'Mukta', sans-serif;
+        font-family: 'IBM Plex Sans', sans-serif;
       }
       
       main {

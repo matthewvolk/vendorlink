@@ -65,7 +65,6 @@ const Index = ({ vendors }) => (
     }
 
     .hero-text {
-      font-family: "Hind Vadodara", sans-serif;
       font-weight: 600;
     }
 
