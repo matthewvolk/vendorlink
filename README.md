@@ -1,4 +1,4 @@
-![VendorList logo](https://i.imgur.com/8UR87PA.png "VendorList")
+![VendorList logo](https://i.imgur.com/d4rhep6.png "VendorList")
 
 Meet & hire amazing talent from our invite-only community of elite web developers, designers, and marketers.
 
