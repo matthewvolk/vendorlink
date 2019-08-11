@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Layout from '../components/layout'
+import Card from '../components/card'
 import fetch from 'isomorphic-unfetch';
 
 const Index = ({ vendors }) => ( 
@@ -11,7 +12,7 @@ const Index = ({ vendors }) => (
 
       <div style={{borderBottom: "1px solid #EAECEF"}}>
         <div className="container">
-          <h1 className="hero-text" style={{marginBottom: "0", marginTop: "0.5rem"}}>Hire Better Freelancers.</h1>
+          <h1 className="hero-text">Hire Better Freelancers.</h1>
           <p className="tagline">Meet &amp; hire amazing talent from our invite-only community of elite web developers, designers, and marketers.</p>
           <Link href={`/our-process`}>
             <a>What makes us different?</a>
@@ -27,6 +28,9 @@ const Index = ({ vendors }) => (
       <div className="background">
         <div className="container" style={{maxWidth: "1120px"}}>
           {/* <p style={{color: "red"}}>@todo Add sort bar</p> */}
+
+
+
           <ul>
             {vendors.map(vendor => (
               <li key={vendor.slug}>
@@ -46,8 +50,8 @@ const Index = ({ vendors }) => (
   <style jsx>{`
     .background {
       background-color: #D5DBE2;
-      padding-top: 0.9rem;
-      padding-bottom: 0.9rem;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
     }
 
     ul {
@@ -62,10 +66,6 @@ const Index = ({ vendors }) => (
       border-right: 1px solid #C5C5C5;
       border-left: 1px solid #C5C5C5;
       background-color: #FDFDFE;
-    }
-
-    .hero-text {
-      font-weight: 600;
     }
 
     h3 {

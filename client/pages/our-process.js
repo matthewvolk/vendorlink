@@ -10,5 +10,9 @@ export default props => (
       <p>Our candidate selection &amp; vetting process is comprehensive, resulting in a deep understanding of technical skill, situational experience, and business-level acumen. </p>
       <p>We use this rich profile data to hand-select candidates that perfectly match your team or product.</p>
     </section>
+
+    <style jsx>{`
+      
+    `}</style>
   </Layout>
 );
