@@ -4,7 +4,7 @@ const Footer = () => (
   <footer>
     <div className="container">
       <div>
-        <p>&copy; {new Date().getFullYear()}, VendorList</p>
+        <p>&copy; {new Date().getFullYear()} <a href="https://volk.dev" target="_blank">volk.dev</a>, LLC</p>
       </div>
       <div className="links">
         <Link href="/terms">
@@ -40,6 +40,10 @@ const Footer = () => (
 
       p {
         font-size: 0.8rem;
+        color: gray;
+      }
+
+      a {
         color: gray;
       }
 
