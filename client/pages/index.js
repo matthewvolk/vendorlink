@@ -20,7 +20,11 @@ const Index = ({ vendors }) => (
         </div>
         <div style={{marginTop: "1.75rem", borderTop: "1px solid #EAECEF"}}>
           <div className="container" style={{color: "rgb(124, 124, 124)", fontWeight: "600", fontSize: "0.9rem"}}>
-            SORT: <a href="/" style={{fontWeight: "400", marginLeft: "1rem", fontSize: "1rem"}}>Category</a>
+            SORT:
+            <a href="/" style={{fontWeight: "400", marginLeft: "1rem", fontSize: "1rem"}}>Role</a>
+            <a href="/" style={{fontWeight: "400", marginLeft: "1rem", fontSize: "1rem"}}>Platform</a>
+            <a href="/" style={{fontWeight: "400", marginLeft: "1rem", fontSize: "1rem"}}>Price</a>
+            <a href="/" style={{fontWeight: "400", marginLeft: "1rem", fontSize: "1rem"}}>Language</a>
           </div>
         </div>
       </div>
