@@ -38,10 +38,13 @@ const Index = ({ vendors }) => (
             {vendors.map(vendor => (
               <li key={vendor.slug}>
                 <Link as={`/vendor/${vendor.slug}`} href={`/vendor?id=${vendor.slug}`}>
-                  <h3>{vendor.name}</h3>
+                  <h3 style={{marginLeft: "5px"}}>{vendor.name}</h3>
                 </Link>
-                  <p className="card-detail">Hourly Rate: ${vendor.rate.toFixed(2)}/hr</p> 
-                  <a href="/">Share</a> <a href="/">Save</a> <a href="/">Hide</a> <a href="/">Report</a>
+                  <p className="card-detail" style={{marginLeft: "5px"}}>Hourly Rate: ${vendor.rate.toFixed(2)}/hr</p> 
+                  <a className="secondary-link" href="/">Share</a> 
+                  <a className="secondary-link" href="/">Save</a> 
+                  <a className="secondary-link" href="/">Hide</a> 
+                  <a className="secondary-link" href="/">Report</a>
               </li>
             ))}
           </ul>
@@ -73,7 +76,7 @@ const Index = ({ vendors }) => (
       padding: 1rem;
       border-top: 1px solid #C5C5C5;
       border-right: 1px solid #C5C5C5;
-      border-left: 1px solid #C5C5C5;
+      border-left: 5px solid #C5C5C5;
       background-color: #FDFDFE;
     }
 
@@ -103,7 +106,22 @@ const Index = ({ vendors }) => (
       padding: 5px 7.5px;
     }
 
-    .sort-links > a:hover {
+    .sort-links > a:hover,
+    .sort-links > a:active {
+      background-color: #f2f2f2;
+      border-radius: 5px;
+    }
+
+    .secondary-link {
+      font-size: 0.9rem; 
+      color: rgb(124, 124, 124); 
+      text-decoration: none;
+      padding: 5px 7.5px;
+      font-weight: 700;
+    }
+
+    .secondary-link:hover,
+    .secondary-link:active {
       background-color: #f2f2f2;
       border-radius: 5px;
     }
