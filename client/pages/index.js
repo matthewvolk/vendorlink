@@ -38,9 +38,9 @@ const Index = ({ vendors }) => (
             {vendors.map(vendor => (
               <li key={vendor.slug}>
                 <Link as={`/vendor/${vendor.slug}`} href={`/vendor?id=${vendor.slug}`}>
-                  <h3 style={{marginLeft: "5px"}}>{vendor.name}</h3>
+                  <h3 style={{marginLeft: "6px"}}>{vendor.name}</h3>
                 </Link>
-                  <p className="card-detail" style={{marginLeft: "5px"}}>Hourly Rate: ${vendor.rate.toFixed(2)}/hr</p> 
+                  <p className="card-detail" style={{marginLeft: "6px"}}>Hourly Rate: ${vendor.rate.toFixed(2)}/hr</p> 
                   <a className="secondary-link" href="/">Share</a> 
                   <a className="secondary-link" href="/">Save</a> 
                   <a className="secondary-link" href="/">Hide</a> 
