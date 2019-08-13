@@ -29,7 +29,7 @@ const Index = ({ vendors }) => (
       </div>
 
       <div className="background">
-        <div className="container" style={{maxWidth: "1120px"}}>
+        <div className="container-cards" style={{maxWidth: "1120px"}}>
           {/* <p style={{color: "red"}}>@todo Add sort bar</p> */}
 
 
@@ -51,6 +51,12 @@ const Index = ({ vendors }) => (
     </section>
 
   <style jsx>{`
+    .container-cards {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 15px 20px;
+    }
+
     .background {
       background-color: #D5DBE2;
       padding-top: 0.5rem;
@@ -100,6 +106,17 @@ const Index = ({ vendors }) => (
     .sort-links > a:hover {
       background-color: #f2f2f2;
       border-radius: 5px;
+    }
+
+    @media only screen and (max-width: 480px) {
+      .container-cards {
+        padding: 8px;
+      }
+
+      .background {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
     }
   `}</style>
 
