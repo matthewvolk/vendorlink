@@ -76,8 +76,10 @@ const Index = ({ vendors }) => (
       padding: 1rem;
       border-top: 1px solid #C5C5C5;
       border-right: 1px solid #C5C5C5;
-      border-left: 5px solid #C5C5C5;
+      border-bottom: 1px solid #C5C5C5;
+      border-left: 1px solid #C5C5C5;
       background-color: #FDFDFE;
+      margin-bottom: -1px;
     }
 
     h3 {
