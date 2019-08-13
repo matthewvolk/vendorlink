@@ -19,12 +19,11 @@ const Index = ({ vendors }) => (
           </Link>
         </div>
         <div style={{marginTop: "1.75rem", borderTop: "1px solid #EAECEF"}}>
-          <div className="container" style={{color: "rgb(124, 124, 124)", fontWeight: "600", fontSize: "0.9rem"}}>
+          <div className="container sort-links" style={{color: "rgb(124, 124, 124)", fontWeight: "600", fontSize: "0.9rem"}}>
             SORT:
-            <a href="/" style={{fontWeight: "400", marginLeft: "1rem", fontSize: "1rem"}}>Role</a>
-            <a href="/" style={{fontWeight: "400", marginLeft: "1rem", fontSize: "1rem"}}>Platform</a>
-            <a href="/" style={{fontWeight: "400", marginLeft: "1rem", fontSize: "1rem"}}>Price</a>
-            <a href="/" style={{fontWeight: "400", marginLeft: "1rem", fontSize: "1rem"}}>Language</a>
+            <a href="/">All Roles</a>
+            <a href="/">All Platforms</a>
+            <a href="/">All Prices</a>
           </div>
         </div>
       </div>
@@ -87,6 +86,20 @@ const Index = ({ vendors }) => (
       margin-bottom: 1rem;
       margin-top: 0.35rem;
       color: rgb(124, 124, 124);
+    }
+
+    .sort-links > a {
+      font-weight: 400; 
+      margin-left: 0.5rem; 
+      font-size: 0.9rem; 
+      color: rgb(124, 124, 124); 
+      text-decoration: none;
+      padding: 5px 7.5px;
+    }
+
+    .sort-links > a:hover {
+      background-color: #f2f2f2;
+      border-radius: 5px;
     }
   `}</style>
 
