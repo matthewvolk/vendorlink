@@ -17,8 +17,9 @@ const Index = ({ vendors }) => (
           <Link href={`/our-process`}>
             <a>What makes us different?</a>
           </Link>
+          <p style={{color: "red", fontSize: "0.85rem"}}>*Disclaimer: This website is in development, and not yet fully functional. Feel free to browse around in the meantime!</p>
         </div>
-        <div style={{marginTop: "1.75rem", borderTop: "1px solid #EAECEF"}}>
+        <div style={{borderTop: "1px solid #EAECEF"}}>
           <div className="container sort-links" style={{color: "rgb(124, 124, 124)", fontWeight: "600", fontSize: "0.9rem"}}>
             SORT:
             <a href="/">All Roles</a>
