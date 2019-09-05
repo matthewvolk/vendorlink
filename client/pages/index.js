@@ -14,7 +14,7 @@ const Index = ({ vendors }) => (
         <div className="container">
           <h1 className="hero-text">Hire Better Freelancers.</h1>
           <p className="tagline">Meet &amp; hire amazing talent from our invite-only community of elite web developers, designers, and marketers.</p>
-          <p style={{color: "#D0D0D1", fontSize: "0.85rem"}}>*Disclaimer: This website is in development, and not yet fully functional. Feel free to browse around in the meantime!</p>
+          <p style={{fontSize: "0.85rem"}}>*Disclaimer: This website is in development, and not yet fully functional. Feel free to browse around in the meantime!</p>
           <Link href={`/our-process`}>
             <a>What makes us different?</a>
           </Link>
