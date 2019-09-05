@@ -13,8 +13,7 @@ const Index = ({ vendors }) => (
       <div style={{borderBottom: "1px solid #EAECEF"}}>
         <div className="container">
           <h1 className="hero-text">Hire Better Freelancers.</h1>
-          <p style={{marginBottom: "0.5em"}} className="tagline">Meet &amp; hire amazing talent from our invite-only community of elite web developers, designers, and marketers.</p>
-          <p style={{fontSize: "0.85rem", marginTop: "0.5em", marginBottom: "2em"}}>*Disclaimer: This website is in development, and not yet fully functional. Feel free to browse around in the meantime!</p>
+          <p style={{margin: "1em 0 2em 0"}} className="tagline">Meet &amp; hire amazing talent from our invite-only community of elite web developers, designers, and marketers. *Note: This website is in development, and not yet fully functional. Feel free to browse around in the meantime!</p>
           <Link href={`/our-process`}>
             <a>What makes us different?</a>
           </Link>
@@ -30,25 +29,12 @@ const Index = ({ vendors }) => (
       </div>
 
       <div className="background">
-        <div className="container-cards" style={{maxWidth: "1120px"}}>
+        <div className="container-cards" style={{maxWidth: "1180px"}}>
           {/* <p style={{color: "red"}}>@todo Add sort bar</p> */}
 
-
-
-          <ul>
-            {vendors.map(vendor => (
-              <li key={vendor.slug}>
-                <Link as={`/vendor/${vendor.slug}`} href={`/vendor?id=${vendor.slug}`}>
-                  <h3 style={{marginLeft: "6.75px"}}>{vendor.name}</h3>
-                </Link>
-                  <p className="card-detail" style={{marginLeft: "6.75px"}}>Hourly Rate: ${vendor.rate.toFixed(2)}/hr</p> 
-                  <a className="secondary-link" href="/">Share</a> 
-                  <a className="secondary-link" href="/">Save</a> 
-                  <a className="secondary-link" href="/">Hide</a> 
-                  <a className="secondary-link" href="/">Report</a>
-              </li>
-            ))}
-          </ul>
+          {vendors.map(vendor => (
+            <Card name={vendor.name} rate={vendor.rate.toFixed(2)} slug={vendor.slug} />
+          ))}
         </div>
       </div>
       
@@ -67,37 +53,8 @@ const Index = ({ vendors }) => (
       padding-bottom: 0.5rem;
     }
 
-    ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    li {
-      padding: 1rem;
-      border-top: 1px solid #C5C5C5;
-      border-right: 1px solid #C5C5C5;
-      border-bottom: 1px solid #C5C5C5;
-      border-left: 1px solid #C5C5C5;
-      background-color: #FDFDFE;
-      margin-bottom: -1px;
-    }
-
-    h3 {
-      cursor: pointer;
-      margin: 0;
-      font-weight: 600;
-    }
-
     .tagline {
       font-weight: 300;
-    }
-
-    .card-detail {
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
-      margin-top: 0.35rem;
-      color: rgb(124, 124, 124);
     }
 
     .sort-links > a {
@@ -111,20 +68,6 @@ const Index = ({ vendors }) => (
 
     .sort-links > a:hover,
     .sort-links > a:active {
-      background-color: #f2f2f2;
-      border-radius: 5px;
-    }
-
-    .secondary-link {
-      font-size: 0.9rem; 
-      color: rgb(124, 124, 124); 
-      text-decoration: none;
-      padding: 5px 7.5px;
-      font-weight: 700;
-    }
-
-    .secondary-link:hover,
-    .secondary-link:active {
       background-color: #f2f2f2;
       border-radius: 5px;
     }
