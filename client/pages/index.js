@@ -14,12 +14,12 @@ const Index = ({ vendors }) => (
         <div className="container">
           <h1 className="hero-text">Hire Better Freelancers.</h1>
           <p style={{marginBottom: "0.5em"}} className="tagline">Meet &amp; hire amazing talent from our invite-only community of elite web developers, designers, and marketers.</p>
-          <p style={{fontSize: "0.85rem", marginTop: "0.5em"}}>*Disclaimer: This website is in development, and not yet fully functional. Feel free to browse around in the meantime!</p>
+          <p style={{fontSize: "0.85rem", marginTop: "0.5em", marginBottom: "2em"}}>*Disclaimer: This website is in development, and not yet fully functional. Feel free to browse around in the meantime!</p>
           <Link href={`/our-process`}>
             <a>What makes us different?</a>
           </Link>
         </div>
-        <div style={{borderTop: "1px solid #EAECEF"}}>
+        <div style={{borderTop: "1px solid #EAECEF", marginTop: "2em"}}>
           <div className="container sort-links" style={{color: "rgb(124, 124, 124)", fontWeight: "600", fontSize: "0.9rem"}}>
             SORT:
             <a href="/">All Roles</a>
