@@ -96,7 +96,6 @@ class Card extends Component {
             padding: 10px 10px 10px 10px;
             margin-top: 5px;
             font-weight: 600;
-            cursor: text;
           }
 
           .detail {
@@ -104,7 +103,6 @@ class Card extends Component {
             margin: 0;
             padding: 0 10px;
             color: #7c7c7c;
-            cursor: text;
           }
 
           .secondary-link {
