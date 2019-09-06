@@ -38,6 +38,7 @@ class Card extends Component {
             display: flex;
             flex-direction: column;
             background-color: #F7F8F9;
+            cursor: default;
           }
 
           .container {
@@ -86,6 +87,7 @@ class Card extends Component {
             font-size: 0.75rem;
             margin: 10px 5px;
             color: #1a1a1b;
+            cursor: text;
           }
 
           .title {
@@ -94,7 +96,7 @@ class Card extends Component {
             padding: 10px 10px 10px 10px;
             margin-top: 5px;
             font-weight: 600;
-            cursor: pointer;
+            cursor: text;
           }
 
           .detail {
@@ -102,6 +104,7 @@ class Card extends Component {
             margin: 0;
             padding: 0 10px;
             color: #7c7c7c;
+            cursor: text;
           }
 
           .secondary-link {
