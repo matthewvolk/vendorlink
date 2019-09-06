@@ -14,7 +14,7 @@ class Card extends Component {
             <div className="container">
               <div className="arrow up blue">&#10140;</div>
               <div className="count">0</div>
-              <div className="arrow down red">&#10140;</div>
+              <div className="arrow down blue">&#10140;</div>
             </div>
           </div>
           <Link as={`/vendor/${this.props.slug}`} href={`/vendor?id=${this.props.slug}`}>
@@ -59,7 +59,7 @@ class Card extends Component {
           }
 
           .blue:hover {
-            color: #00D07C;
+            color: #2085C4;
           }
 
           .red:hover {
