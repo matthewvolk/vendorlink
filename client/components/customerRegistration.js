@@ -1,6 +1,7 @@
 import { Component } from 'react'
 import Router from 'next/router';
 import fetch from 'isomorphic-unfetch'
+import Link from 'next/link'
 
 class CustomerRegistration extends Component {
   constructor(props) {
@@ -120,6 +121,12 @@ class CustomerRegistration extends Component {
               <br/>
               <p style={{color: "#2085c4"}}>@todo add password confirmation</p>
               <p style={{color: "#2085c4"}}>@todo CORS for Firefox: Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://localhost:3001/api/v1/auth/user/create. (Reason: missing token ‘content-type’ in CORS header ‘Access-Control-Allow-Headers’ from CORS preflight channel).</p>
+              <input type="checkbox" name="" id="" required/> By clicking submit you agree to the <Link href={`/terms`}><a>Terms and Conditions</a></Link> and <Link href={`/privacy`}><a>Privacy Policy</a></Link>
+              <br/>
+              <br/>
+              <input type="checkbox" name="" id="" checked/> I don't mind receiving emails with exclusive offers and top talent. 
+              <br/>
+              <br/>
               <input type="submit" className="btn" value="Coming Soon" />
             </form>
           </div>

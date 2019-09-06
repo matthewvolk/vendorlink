@@ -6,7 +6,8 @@ export default props => (
   >
     <section className="container">
       <h1>Dashboard</h1>
-      <p>@todo authenticate this route</p>
+      <p>Coming Soon 😎</p>
+      {/* @todo Authenticate this route */}
     </section>
   </Layout>
 );
