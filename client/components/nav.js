@@ -176,6 +176,7 @@ class Nav extends Component {
           .overlay .nav-link {
             margin: 0 auto;
             padding: 20px;
+            font-size: 1.25rem;
           }
 
           .links .nav-link:hover,
@@ -203,6 +204,7 @@ class Nav extends Component {
           .overlay .nav-btn {
             margin: 1.5em auto;
             padding: 20px;
+            font-size: 1.25rem;
           }
 
           .links .nav-btn:hover,
