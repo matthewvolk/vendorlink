@@ -7,6 +7,20 @@ class Card extends Component {
   constructor(props) {
     super(props);
   }
+
+  state = { value: parseInt(this.props.votes) };
+
+  rankUp = () => {
+    this.setState(prevState => ({
+      value: prevState.value + 1
+    }));
+  };
+
+  rankDown = () => {
+    this.setState(prevState => ({
+      value: prevState.value - 1
+    }));
+  };
   
   render () {
     return (
@@ -14,11 +28,11 @@ class Card extends Component {
         <div className="card">
           <div className="arrows">
             <div className="container">
-              <div className="arrow red">
+              <div className="arrow red" onClick={this.rankUp}>
                 <FontAwesomeIcon icon={faCaretUp} size="lg" />
               </div>
-              <div className="count">{this.props.votes}</div>
-              <div className="arrow red">
+              <div className="count">{this.state.value}</div>
+              <div className="arrow red" onClick={this.rankDown}>
                 <FontAwesomeIcon icon={faCaretDown} size="lg" />
               </div>
             </div>
@@ -70,6 +84,10 @@ class Card extends Component {
             cursor: pointer;
             color: #76797B;
             padding: 2.5px 5px;
+            -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+            -moz-user-select: none; /* mozilla browsers */
+            -khtml-user-select: none; /* webkit (konqueror) browsers */
+            -ms-user-select: none; /* IE10+ */
           }
 
           .blue:hover {
@@ -91,6 +109,10 @@ class Card extends Component {
             margin: 10px 5px;
             color: #1a1a1b;
             cursor: text;
+            -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+            -moz-user-select: none; /* mozilla browsers */
+            -khtml-user-select: none; /* webkit (konqueror) browsers */
+            -ms-user-select: none; /* IE10+ */
           }
 
           .title {
