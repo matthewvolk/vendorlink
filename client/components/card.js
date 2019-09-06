@@ -1,5 +1,7 @@
 import { Component } from 'react'
 import Link from 'next/link'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCaretUp, faCaretDown } from '@fortawesome/free-solid-svg-icons'
 
 class Card extends Component {
   constructor(props) {
@@ -12,15 +14,20 @@ class Card extends Component {
         <div className="card">
           <div className="arrows">
             <div className="container">
-              <div className="arrow up blue">&#10140;</div>
+              <div className="arrow blue">
+                <FontAwesomeIcon icon={faCaretUp} size="lg" />
+              </div>
               <div className="count">0</div>
-              <div className="arrow down blue">&#10140;</div>
+              <div className="arrow blue">
+                <FontAwesomeIcon icon={faCaretDown} size="lg" />
+              </div>
             </div>
           </div>
           <Link as={`/vendor/${this.props.slug}`} href={`/vendor?id=${this.props.slug}`}>
             <div className="content">
               <h3 className="title">{this.props.name}</h3>
               <p className="detail">Hourly Rate: ${this.props.rate}</p>
+              <p className="detail">Tags: Magento, Shopify, PHP</p>
             </div>
           </Link>
         </div>
@@ -49,14 +56,15 @@ class Card extends Component {
             align-items: center;
             justify-content: center;
             min-width: 1.5rem;
-            max-width: 1.5rem;
+            max-width: 2rem;
           }
 
           .arrow {
             font-weight: 700;
+            font-size: 1.15rem;
             cursor: pointer;
             color: #76797B;
-            padding: 2.5px;
+            padding: 2.5px 5px;
           }
 
           .blue:hover {
@@ -70,16 +78,6 @@ class Card extends Component {
           .arrow:hover {
             background-color: #e2e2e2;
             border-radius: 5px;
-          }
-
-          .up {
-            transform: rotate(-90deg);
-            -webkit-transform: rotate(-90deg);
-          }
-
-          .down {
-            transform: rotate(90deg);
-            -webkit-transform: rotate(90deg);
           }
 
           .count {
@@ -101,7 +99,7 @@ class Card extends Component {
           .detail {
             font-size: 0.9rem;
             margin: 0;
-            padding: 0 10px;
+            padding: 0 10px 5px 10px;
             color: #7c7c7c;
           }
 

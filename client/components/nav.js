@@ -38,25 +38,19 @@ class Nav extends Component {
         </div>
         <div className="links">
           <Link href="/our-process">
-            <a>Our Process</a>
-          </Link>
-          <Link href="/rfq">
-            <a>Free RFQ</a>
+            <a className="nav-link">About</a>
           </Link>
           <Link href="/register">
-            <a>Register</a>
+            <a className="nav-btn">Register</a>
           </Link>
         </div>
 
         <div className="overlay">
           <Link href="/our-process">
-            <a>Our Process</a>
-          </Link>
-          <Link href="/rfq">
-            <a>Free RFQ</a>
+            <a className="nav-link">About</a>
           </Link>
           <Link href="/register">
-            <a>Register</a>
+            <a className="nav-btn">Register</a>
           </Link>
         </div>
 
@@ -167,9 +161,46 @@ class Nav extends Component {
             -webkit-font-smoothing: antialiased;
           }
   
-          .links a {
-            padding: 0;
-            margin-left: 0.75em;
+          .links .nav-link,
+          .overlay .nav-link {
+            padding: 10px;
+            margin-right: 0.75em;
+            font-weight: 500;
+            text-decoration: none;
+            color: grey;
+            transition: color 0.1s;
+          }
+
+          .overlay .nav-link {
+            margin: 0 auto;
+            padding: 20px;
+          }
+
+          .links .nav-link:hover,
+          .overlay .nav-link:hover {
+            color: #a1a1a1;
+          }
+
+          .links .nav-btn,
+          .overlay .nav-btn {
+            padding: 10px;
+            background-color: #0071c3;
+            border-radius: 5px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            transition: background-color 0.1s;
+          }
+
+          .overlay .nav-btn {
+            max-width: 6em;
+            margin: 0 auto;
+            padding: 20px;
+          }
+
+          .links .nav-btn:hover,
+          .overlay .nav-btn:hover {
+            background-color: #0064ad;
           }
         `}</style>
       </nav>
