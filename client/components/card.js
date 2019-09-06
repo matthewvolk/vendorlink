@@ -59,6 +59,10 @@ class Card extends Component {
             cursor: pointer;
           }
 
+          .content {
+            width: 100%;
+          }
+
           .arrows {
             display: flex;
             flex-direction: column;
