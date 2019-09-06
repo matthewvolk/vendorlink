@@ -1,5 +1,7 @@
 import { Component } from 'react'
 import Link from 'next/link'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSignInAlt } from '@fortawesome/free-solid-svg-icons'
 
 class Nav extends Component {
   constructor(props) {
@@ -41,7 +43,7 @@ class Nav extends Component {
             <a className="nav-link">Our Process</a>
           </Link>
           <Link href="/register">
-            <a className="nav-btn">Get Started</a>
+            <a className="nav-btn"><FontAwesomeIcon icon={faSignInAlt} size="sm" /> &nbsp;Get Started</a>
           </Link>
         </div>
 
@@ -50,7 +52,7 @@ class Nav extends Component {
             <a className="nav-link">Our Process</a>
           </Link>
           <Link href="/register">
-            <a className="nav-btn">Get Started</a>
+            <a className="nav-btn"><FontAwesomeIcon icon={faSignInAlt} size="sm" />  Get Started</a>
           </Link>
         </div>
 
@@ -167,8 +169,8 @@ class Nav extends Component {
             margin-right: 1em;
             font-weight: 500;
             text-decoration: none;
-            color: grey;
-            transition: color 0.1s;
+            color: rgb(127, 132, 138);
+            font-size: 0.925rem;
           }
 
           .overlay .nav-link {
@@ -178,29 +180,39 @@ class Nav extends Component {
 
           .links .nav-link:hover,
           .overlay .nav-link:hover {
-            color: #a1a1a1;
+            color: rgba(127, 132, 138, 0.9);
+          }
+
+          .links .nav-link:active,
+          .overlay .nav-link:active {
+            color: #5b5e63;
           }
 
           .links .nav-btn,
           .overlay .nav-btn {
             padding: 10px;
-            background-color: #0071c3;
+            background-color: rgb(9, 106, 181);
             border-radius: 5px;
             text-decoration: none;
             color: white;
             font-weight: 600;
-            transition: background-color 0.1s;
+            font-size: 0.925rem;
+            border-bottom: 3px solid rgba(0,0,0,0.2);
           }
 
           .overlay .nav-btn {
-            max-width: 6em;
             margin: 1.5em auto;
             padding: 20px;
           }
 
           .links .nav-btn:hover,
           .overlay .nav-btn:hover {
-            background-color: #0064ad;
+            background-color: rgba(9, 106, 181, 0.9);
+          }
+
+          .links .nav-btn:active,
+          .overlay .nav-btn:active {
+            background-color: rgb(7, 90, 154);
           }
         `}</style>
       </nav>

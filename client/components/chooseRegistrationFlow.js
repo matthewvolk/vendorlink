@@ -68,11 +68,21 @@ export default props => (
 
       .btn {
         padding: 10px;
-        background-color: #0071c3;
+        background-color: rgb(9, 106, 181);
         border-radius: 5px;
         text-decoration: none;
         color: white;
-        border: none;
+        font-weight: 600;
+        font-size: 0.925rem;
+        border-bottom: 3px solid rgba(0,0,0,0.2);
+      }
+
+      .btn:hover {
+        background-color: rgba(9, 106, 181, 0.9);
+      }
+
+      .btn:active {
+        background-color: rgb(7, 90, 154);
       }
 
     `}</style>

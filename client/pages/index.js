@@ -46,7 +46,7 @@ const Index = ({ vendors }) => (
     }
 
     .background {
-      background-color: #D5DBE2;
+      background-color: rgb(216, 222, 226);
       padding-top: 0.5rem;
       padding-bottom: 0.5rem;
     }

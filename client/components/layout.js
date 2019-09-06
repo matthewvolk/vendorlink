@@ -51,7 +51,7 @@ export default ({ children, title, description }) => (
       
       a {
         background-color: transparent;
-        color: #2085c4;
+        color: rgb(9, 106, 181);
       }
 
       a:active {

@@ -28,11 +28,11 @@ class Card extends Component {
         <div className="card">
           <div className="arrows">
             <div className="container">
-              <div className="arrow red" onClick={this.rankUp}>
+              <div className="arrow blue" onClick={this.rankUp}>
                 <FontAwesomeIcon icon={faCaretUp} size="lg" />
               </div>
               <div className="count">{this.state.value}</div>
-              <div className="arrow red" onClick={this.rankDown}>
+              <div className="arrow blue" onClick={this.rankDown}>
                 <FontAwesomeIcon icon={faCaretDown} size="lg" />
               </div>
             </div>
@@ -95,7 +95,7 @@ class Card extends Component {
           }
 
           .blue:hover {
-            color: #2085C4;
+            color: rgb(28, 108, 170);
           }
 
           .red:hover {
