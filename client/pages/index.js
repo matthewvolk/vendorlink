@@ -30,8 +30,6 @@ const Index = ({ vendors }) => (
 
       <div className="background">
         <div className="container-cards" style={{maxWidth: "1180px"}}>
-          {/* <p style={{color: "red"}}>@todo Add sort bar</p> */}
-
           {vendors.map(vendor => (
             <Card name={vendor.name} rate={vendor.rate.toFixed(2)} slug={vendor.slug} />
           ))}
