@@ -68,7 +68,7 @@ export default props => (
 
       .btn {
         padding: 10px;
-        background-color: rgb(27, 99, 162);
+        background-color: rgb(23, 123, 186);
         border-radius: 5px;
         text-decoration: none;
         color: white;
@@ -78,11 +78,11 @@ export default props => (
       }
 
       .btn:hover {
-        background-color: rgba(27, 99, 162, 0.9);
+        background-color: rgba(23, 123, 186, 0.9);
       }
 
       .btn:active {
-        background-color: rgb(23, 87, 142);
+        background-color: rgb(17, 114, 175);
       }
 
     `}</style>
