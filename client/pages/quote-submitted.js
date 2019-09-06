@@ -2,7 +2,7 @@ import Layout from '../components/layout'
 
 export default props => (
   <Layout
-    title={`Custom Quote Submitted! | VendorList`}
+    title={`Custom Quote Submitted! | VendorLink`}
   >
     <section className="container">
       <h1>Request Submitted!</h1>

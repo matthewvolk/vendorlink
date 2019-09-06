@@ -32,7 +32,7 @@ class Nav extends Component {
               className="logo-link"
             >
               <img src="/static/logo.svg" alt="Logo" width="30px"/>
-              <p>VendorList</p>
+              <p>VendorLink</p>
             </a>
           </Link>
         </div>

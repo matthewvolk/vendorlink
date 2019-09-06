@@ -1,4 +1,4 @@
-![VendorList logo](https://i.imgur.com/d4rhep6.png "VendorList")
+![VendorLink logo](https://i.imgur.com/MfmLwn3.png "VendorLink")
 
 Meet & hire amazing talent from our invite-only community of elite web developers, designers, and marketers.
 
@@ -11,7 +11,7 @@ Here is a list of all the big technologies we use:
 
 #### Folder structure
 ```sh
-vendorlist/
+vendorlink/
 ├── api/           # API server
 ├── client/        # Frontend Next.js app
 ```

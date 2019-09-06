@@ -6,7 +6,7 @@ import fetch from 'isomorphic-unfetch';
 
 const Checkout = withRouter(({ product, productId}) => (
   <Layout
-    title={`Checkout | VendorList`}
+    title={`Checkout | VendorLink`}
   >
     <section>
       <h1>Checkout</h1>

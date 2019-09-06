@@ -2,7 +2,7 @@ import Layout from '../components/layout'
 
 export default props => (
   <Layout
-    title={`Privacy Policy | VendorList`}
+    title={`Privacy Policy | VendorLink`}
   >
     <section className="container">
       <h1>Privacy Policy</h1>

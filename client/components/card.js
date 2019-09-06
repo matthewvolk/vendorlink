@@ -14,11 +14,11 @@ class Card extends Component {
         <div className="card">
           <div className="arrows">
             <div className="container">
-              <div className="arrow blue">
+              <div className="arrow red">
                 <FontAwesomeIcon icon={faCaretUp} size="lg" />
               </div>
-              <div className="count">0</div>
-              <div className="arrow blue">
+              <div className="count">{this.props.votes}</div>
+              <div className="arrow red">
                 <FontAwesomeIcon icon={faCaretDown} size="lg" />
               </div>
             </div>
@@ -27,7 +27,11 @@ class Card extends Component {
             <div className="content">
               <h3 className="title">{this.props.name}</h3>
               <p className="detail">Hourly Rate: ${this.props.rate}</p>
-              <p className="detail">Tags: Magento, Shopify, PHP</p>
+              <div className="tags">
+                {this.props.skills.map((skill, index) => (
+                  <div key={index} className="tag">{skill}</div>
+                ))}
+              </div>
             </div>
           </Link>
         </div>
@@ -46,6 +50,7 @@ class Card extends Component {
             flex-direction: column;
             background-color: #F7F8F9;
             cursor: default;
+            margin-right: .33rem;
           }
 
           .container {
@@ -91,15 +96,20 @@ class Card extends Component {
           .title {
             font-size: 1.25rem;
             margin: 0;
-            padding: 10px 10px 10px 10px;
+            padding: 5px;
             margin-top: 5px;
             font-weight: 600;
+            transition: color 0.2s ease-in-out;
+          }
+
+          .title:hover {
+            color: #7c7c7c;
           }
 
           .detail {
             font-size: 0.9rem;
             margin: 0;
-            padding: 0 10px 5px 10px;
+            padding: 5px;
             color: #7c7c7c;
           }
 
@@ -115,6 +125,25 @@ class Card extends Component {
           .secondary-link:active {
             background-color: #f2f2f2;
             border-radius: 5px;
+          }
+
+          .tags {
+            display: flex;
+            flex-wrap: wrap;
+          }
+
+          .tag {
+            border: 1px solid #76797B;
+            color: #76797B;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            padding: .2rem;
+            margin: 5px;
+          }
+
+          .tag:hover {
+            color: white;
+            background-color: #76797B;
           }
         `}</style>
       </>

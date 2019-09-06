@@ -29,4 +29,4 @@ app.get('/', (req, res) => res.json({
   "version": 1
 }))
 
-app.listen(port, () => console.log(`\n> VendorList API listening on port http://localhost:${port}!`))
+app.listen(port, () => console.log(`\n> VendorLink API listening on port http://localhost:${port}!`))

@@ -23,7 +23,7 @@ export default withRouter(props => {
   
   return (
     <Layout
-      title={`Submit a free quote | VendorList`}
+      title={`Submit a free quote | VendorLink`}
     >
       <section className="container">
         <h1>Custom Quote {(() => { if (props.router.query.vendor) return `for ${props.router.query.vendor}`; })(props)}</h1>

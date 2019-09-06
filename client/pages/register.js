@@ -9,7 +9,7 @@ export default withRouter(props => {
   switch (props.router.query.type) {
     case "customer":
       return (
-        <Layout title={`Register as a Customer | VendorList`}>
+        <Layout title={`Register as a Customer | VendorLink`}>
           <div className="container">
             <CustomerRegistration/>
           </div>
@@ -17,7 +17,7 @@ export default withRouter(props => {
       )
     case "vendor":
       return (
-        <Layout title={`Apply as a Vendor| VendorList`}>
+        <Layout title={`Apply as a Vendor| VendorLink`}>
           <div className="container">
             <VendorApplication/>
           </div>
@@ -25,7 +25,7 @@ export default withRouter(props => {
       )
     default:
       return (
-        <Layout title={`Register | VendorList`}>
+        <Layout title={`Register | VendorLink`}>
           <div className="container">
             <ChooseRegistrationFlow/>
           </div>

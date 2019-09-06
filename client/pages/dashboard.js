@@ -2,7 +2,7 @@ import Layout from '../components/layout'
 
 export default props => (
   <Layout
-    title={`Dashboard | VendorList`}
+    title={`Dashboard | VendorLink`}
   >
     <section className="container">
       <h1>Dashboard</h1>

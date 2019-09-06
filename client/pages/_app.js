@@ -2,7 +2,7 @@ import React from 'react';
 import App, { Container } from 'next/app';
 import { StripeProvider } from "react-stripe-elements-universal";
 
-class VendorList extends App {
+class VendorLink extends App {
   static async getInitialProps({ Component, ctx }) {
     let pageProps = {};
 
@@ -28,4 +28,4 @@ class VendorList extends App {
   }
 }
 
-export default VendorList;
+export default VendorLink;

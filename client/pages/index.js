@@ -5,7 +5,7 @@ import fetch from 'isomorphic-unfetch';
 
 const Index = ({ vendors }) => ( 
   <Layout
-    title={`Hire Better Freelancers | VendorList`}
+    title={`Hire Better Freelancers | VendorLink`}
     description={`Low commitment, ad-hoc jobs assigned to expert designers, developers, and marketers with payment held in escrow until work is delivered.`}
   >
     <section>
@@ -31,7 +31,7 @@ const Index = ({ vendors }) => (
       <div className="background">
         <div className="container-cards" style={{maxWidth: "1180px"}}>
           {vendors.map(vendor => (
-            <Card name={vendor.name} rate={vendor.rate.toFixed(2)} slug={vendor.slug} key={vendor.slug} />
+            <Card key={vendor.slug} name={vendor.name} rate={vendor.rate.toFixed(2)} slug={vendor.slug} skills={vendor.skills} votes={vendor.votes} />
           ))}
         </div>
       </div>

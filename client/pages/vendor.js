@@ -7,7 +7,7 @@ const Vendor = withRouter(({ vendor, vendorId }) => {
 
   return (
     <Layout
-      title={`${vendor.name} | VendorList`}
+      title={`${vendor.name} | VendorLink`}
       /** @todo add meta description based on vendor description of the Vendor offered */
     >
       <div className="container">
