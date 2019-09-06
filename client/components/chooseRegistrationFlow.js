@@ -29,6 +29,12 @@ export default props => (
         text-align: center;
       }
 
+      @media only screen and (max-width: 480px) {
+        .choose {
+          max-width: 100%;
+        }
+      }
+
       .choose h1 {
         margin-bottom: 2rem;
         align-self: left;
