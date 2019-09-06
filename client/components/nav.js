@@ -41,7 +41,7 @@ class Nav extends Component {
             <a className="nav-link">Our Process</a>
           </Link>
           <Link href="/register">
-            <a className="nav-btn">Register</a>
+            <a className="nav-btn">Get Started</a>
           </Link>
         </div>
 
@@ -50,7 +50,7 @@ class Nav extends Component {
             <a className="nav-link">Our Process</a>
           </Link>
           <Link href="/register">
-            <a className="nav-btn">Register</a>
+            <a className="nav-btn">Get Started</a>
           </Link>
         </div>
 

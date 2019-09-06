@@ -61,62 +61,91 @@ class CustomerRegistration extends Component {
 
   render () {
     return (
-      <section>
-        <h1>Customer Registration</h1>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            First Name:
+      <>
+        <section className="modal">
+          <h2>Customer Registration</h2>
+          <form onSubmit={this.handleSubmit}>
+            <label>
+              First Name:
+              <br/>
+              <input 
+                type="text" 
+                name="first_name" 
+                value={this.state.first_name} 
+                onChange={this.handleChange} 
+                required
+              />
+            </label>
             <br/>
-            <input 
-              type="text" 
-              name="first_name" 
-              value={this.state.first_name} 
-              onChange={this.handleChange} 
-            />
-          </label>
-          <br/>
-          <br/>
-          <label>
-            Last Name:
             <br/>
-            <input 
-              type="text" 
-              name="last_name" 
-              value={this.state.last_name} 
-              onChange={this.handleChange} 
-            />
-          </label>
-          <br/>
-          <br/>
-          <label>
-            Email:
+            <label>
+              Last Name:
+              <br/>
+              <input 
+                type="text" 
+                name="last_name" 
+                value={this.state.last_name} 
+                onChange={this.handleChange} 
+                required
+              />
+            </label>
             <br/>
-            <input 
-              type="text" 
-              name="email" 
-              value={this.state.email} 
-              onChange={this.handleChange} 
-            />
-          </label>
-          <br/>
-          <br/>
-          <label>
-            Password:
             <br/>
-            <input 
-              type="password" 
-              name="password" 
-              value={this.state.password} 
-              onChange={this.handleChange} 
-            />
-          </label>
-          <br/>
-          <br/>
-          <p style={{color: "red"}}>@todo add password confirmation</p>
-          <p style={{color: "red"}}>@todo CORS for Firefox: Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://localhost:3001/api/v1/auth/user/create. (Reason: missing token ‘content-type’ in CORS header ‘Access-Control-Allow-Headers’ from CORS preflight channel).</p>
-          <input type="submit" value="Submit" />
-        </form>
-      </section>
+            <label>
+              Email:
+              <br/>
+              <input 
+                type="email" 
+                name="email" 
+                value={this.state.email} 
+                onChange={this.handleChange} 
+                required
+              />
+            </label>
+            <br/>
+            <br/>
+            <label>
+              Password:
+              <br/>
+              <input 
+                type="password" 
+                name="password" 
+                value={this.state.password} 
+                onChange={this.handleChange} 
+                required
+              />
+            </label>
+            <br/>
+            <br/>
+            <p style={{color: "#2085c4"}}>@todo add password confirmation</p>
+            <p style={{color: "#2085c4"}}>@todo CORS for Firefox: Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://localhost:3001/api/v1/auth/user/create. (Reason: missing token ‘content-type’ in CORS header ‘Access-Control-Allow-Headers’ from CORS preflight channel).</p>
+            <input type="submit" className="btn" value="Coming Soon" />
+          </form>
+        </section>
+
+        <style jsx>{`
+          .modal {
+            border: 1px solid #2085c4;
+            border-radius: 5px;
+            padding: 1rem;
+            margin: 0 1em 1em 1em;
+            text-align: left;
+          }
+
+          input {
+            border: 1px solid lightgrey;
+          }
+
+          .btn {
+            padding: 10px;
+            background-color: #0071c3;
+            border-radius: 5px;
+            text-decoration: none;
+            color: white;
+            border: none;
+          }
+        `}</style>
+      </>
     )
   }
 }
