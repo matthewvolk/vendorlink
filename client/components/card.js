@@ -95,7 +95,7 @@ class Card extends Component {
           }
 
           .blue:hover {
-            color: rgb(20, 137, 201);
+            color: rgb(23, 123, 186);
           }
 
           .red:hover {
