@@ -38,7 +38,7 @@ class Nav extends Component {
         </div>
         <div className="links">
           <Link href="/our-process">
-            <a className="nav-link">About</a>
+            <a className="nav-link">Our Process</a>
           </Link>
           <Link href="/register">
             <a className="nav-btn">Register</a>
@@ -47,7 +47,7 @@ class Nav extends Component {
 
         <div className="overlay">
           <Link href="/our-process">
-            <a className="nav-link">About</a>
+            <a className="nav-link">Our Process</a>
           </Link>
           <Link href="/register">
             <a className="nav-btn">Register</a>
@@ -164,7 +164,7 @@ class Nav extends Component {
           .links .nav-link,
           .overlay .nav-link {
             padding: 10px;
-            margin-right: 0.75em;
+            margin-right: 1em;
             font-weight: 500;
             text-decoration: none;
             color: grey;
@@ -194,7 +194,7 @@ class Nav extends Component {
 
           .overlay .nav-btn {
             max-width: 6em;
-            margin: 0 auto;
+            margin: 1.5em auto;
             padding: 20px;
           }
 
