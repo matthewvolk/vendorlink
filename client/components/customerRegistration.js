@@ -139,8 +139,16 @@ class CustomerRegistration extends Component {
               <br/>
               {/* <p style={{color: "rgb(39, 103, 168)"}}>@todo add password confirmation</p> */}
               {/* <p style={{color: "rgb(39, 103, 168)"}}>@todo CORS for Firefox: Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://localhost:3001/api/v1/auth/user/create. (Reason: missing token ‘content-type’ in CORS header ‘Access-Control-Allow-Headers’ from CORS preflight channel).</p> */}
-              <div className="consent"><input type="checkbox" name="" id="terms" required/> By clicking submit you agree to the <Link href={`/terms`}><a>Terms and Conditions</a></Link> and <Link href={`/privacy`}><a>Privacy Policy</a></Link></div>
-              <div className="consent"><input type="checkbox" name="" id="email-opt"/> I don't mind receiving emails with exclusive offers and top talent.</div>
+              <div className="consent">
+                <label htmlFor="terms">
+                  <input type="checkbox" name="" id="terms" required/> By clicking submit you agree to the <Link href={`/terms`}><a>Terms and Conditions</a></Link> and <Link href={`/privacy`}><a>Privacy Policy</a></Link>
+                </label>
+              </div>
+              <div className="consent">
+                <label htmlFor="email-opt">
+                  <input type="checkbox" name="" id="email-opt"/> I don't mind receiving emails with exclusive offers and top talent.
+                </label>
+              </div>
               <input type="submit" className="btn" value="Coming Soon" />
             </form>
           </div>
