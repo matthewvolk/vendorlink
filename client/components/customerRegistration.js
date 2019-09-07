@@ -11,6 +11,7 @@ class CustomerRegistration extends Component {
       last_name: '',
       email: '',
       password: '',
+      confirm_password: '',
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -29,6 +30,11 @@ class CustomerRegistration extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
+
+    if (this.state.password !== this.state.confirm_password) {
+      alert("Passwords do not match")
+      return;
+    }
 
     fetch(`${process.env.API_URL}/api/v1/auth/user/create`, {
       method: 'POST',
@@ -112,6 +118,19 @@ class CustomerRegistration extends Component {
                   type="password" 
                   name="password" 
                   value={this.state.password} 
+                  onChange={this.handleChange} 
+                  required
+                />
+              </label>
+              <br/>
+              <br/>
+              <label>
+                Confirm Password:
+                <br/>
+                <input 
+                  type="password" 
+                  name="confirm_password" 
+                  value={this.state.confirm_password} 
                   onChange={this.handleChange} 
                   required
                 />
