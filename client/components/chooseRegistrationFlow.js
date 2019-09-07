@@ -67,7 +67,7 @@ export default props => (
       }
 
       .btn {
-        padding: 10px;
+        padding: 8.5px 10px;
         background-color: rgb(23, 123, 186);
         border-radius: 5px;
         text-decoration: none;
