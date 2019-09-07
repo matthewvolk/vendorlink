@@ -130,7 +130,7 @@ class CustomerRegistration extends Component {
         <style jsx>{`
           .modal {
             border-radius: 5px;
-            margin: 0 1em 1em 1em;
+            margin: 0em 3em 1em;
             text-align: left;
             -webkit-box-shadow: 0px 0px 28px 0px rgba(128,128,128,0.1);
             -moz-box-shadow: 0px 0px 28px 0px rgba(128,128,128,0.1);
@@ -149,6 +149,10 @@ class CustomerRegistration extends Component {
           @media only screen and (max-width: 480px) {
             .modal {
               margin: 0;
+            }
+
+            .pad {
+              padding: 2rem 1.5rem;
             }
           }
 
