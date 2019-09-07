@@ -65,7 +65,6 @@ class CustomerRegistration extends Component {
       <>
         <section className="modal">
           <div className="pad">
-            <h2>Customer Registration</h2>
             <form onSubmit={this.handleSubmit}>
               <label>
                 First Name:
@@ -119,14 +118,10 @@ class CustomerRegistration extends Component {
               </label>
               <br/>
               <br/>
-              <p style={{color: "rgb(39, 103, 168)"}}>@todo add password confirmation</p>
-              <p style={{color: "rgb(39, 103, 168)"}}>@todo CORS for Firefox: Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://localhost:3001/api/v1/auth/user/create. (Reason: missing token ‘content-type’ in CORS header ‘Access-Control-Allow-Headers’ from CORS preflight channel).</p>
-              <input type="checkbox" name="" id="" required/> By clicking submit you agree to the <Link href={`/terms`}><a>Terms and Conditions</a></Link> and <Link href={`/privacy`}><a>Privacy Policy</a></Link>
-              <br/>
-              <br/>
-              <input type="checkbox" name="" id="" checked/> I don't mind receiving emails with exclusive offers and top talent. 
-              <br/>
-              <br/>
+              {/* <p style={{color: "rgb(39, 103, 168)"}}>@todo add password confirmation</p> */}
+              {/* <p style={{color: "rgb(39, 103, 168)"}}>@todo CORS for Firefox: Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://localhost:3001/api/v1/auth/user/create. (Reason: missing token ‘content-type’ in CORS header ‘Access-Control-Allow-Headers’ from CORS preflight channel).</p> */}
+              <div className="consent"><input type="checkbox" name="" id="terms" required/> By clicking submit you agree to the <Link href={`/terms`}><a>Terms and Conditions</a></Link> and <Link href={`/privacy`}><a>Privacy Policy</a></Link></div>
+              <div className="consent"><input type="checkbox" name="" id="email-opt"/> I don't mind receiving emails with exclusive offers and top talent.</div>
               <input type="submit" className="btn" value="Coming Soon" />
             </form>
           </div>
@@ -134,34 +129,52 @@ class CustomerRegistration extends Component {
 
         <style jsx>{`
           .modal {
-            border: 1px solid rgb(39, 103, 168);
             border-radius: 5px;
             margin: 0 1em 1em 1em;
             text-align: left;
-            
+            -webkit-box-shadow: 0px 0px 28px 0px rgba(128,128,128,0.1);
+            -moz-box-shadow: 0px 0px 28px 0px rgba(128,128,128,0.1);
+            box-shadow: 0px 0px 28px 0px rgba(128,128,128,0.1);
             box-sizing: border-box;
+          }
+          
+          .consent {
+            margin-bottom: 1rem;
           }
 
           .pad {
-            padding: 1em;
+            padding: 3rem;
           }
 
           @media only screen and (max-width: 480px) {
             .modal {
               margin: 0;
             }
-
-            .pad {
-              padding: 0.5rem;
-            }
           }
 
           input {
-            border: 1px solid lightgrey;
+            width: 100%;
           }
 
+          input[type="text"],
+          input[type="email"],
+          input[type="password"] {
+            padding: 10px 5px;
+            font-size: 1.25rem;
+            box-sizing: border-box;
+            background-color: #f3f3f3;
+            border: none;
+            border-radius: 5px;
+            color: #1c262e;
+            margin-top: 0.25rem;
+          }
+
+          label {
+            color: rgb(96, 100, 105);
+          } 
+
           .btn {
-            padding: 8.5px 10px;
+            padding: 10px;
             background-color: rgb(39, 103, 168);
             border-radius: 5px;
             text-decoration: none;
@@ -169,7 +182,7 @@ class CustomerRegistration extends Component {
             font-weight: 600;
             border: none;
             cursor: pointer;
-            font-size: 0.925rem;
+            font-size: 1.125rem;
             border-bottom: 3px solid rgba(0,0,0,0.3);
           }
 

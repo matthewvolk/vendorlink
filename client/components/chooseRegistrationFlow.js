@@ -24,7 +24,7 @@ export default props => (
         display: flex;
         flex-direction: column;
         align-items: center;
-        max-width: 60%;
+        max-width: 60rem;
         margin: 0 auto;
         text-align: center;
       }
@@ -46,7 +46,7 @@ export default props => (
         border-bottom: 1px solid lightgrey; 
         color: lightgrey;
         line-height: 0.1em;
-        margin: 2em; 
+        margin: 1.5em 2em 2.125em; 
         text-transform: uppercase;
       }
 
@@ -67,13 +67,13 @@ export default props => (
       }
 
       .btn {
-        padding: 8.5px 10px;
+        padding: 10px 30px;
         background-color: rgb(39, 103, 168);
         border-radius: 5px;
         text-decoration: none;
         color: white;
         font-weight: 600;
-        font-size: 0.925rem;
+        font-size: 1.0625rem;
         border-bottom: 3px solid rgba(0,0,0,0.3);
       }
 

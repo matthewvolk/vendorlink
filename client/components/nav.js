@@ -43,7 +43,7 @@ class Nav extends Component {
             <a className="nav-link">Our Process</a>
           </Link>
           <Link href="/register">
-            <a className="nav-btn"><FontAwesomeIcon icon={faSignInAlt} size="sm" /> &nbsp;Get Started</a>
+            <a className="nav-btn"><FontAwesomeIcon icon={faSignInAlt} size="sm" /> &nbsp;Register</a>
           </Link>
         </div>
 
@@ -52,7 +52,7 @@ class Nav extends Component {
             <a className="nav-link">Our Process</a>
           </Link>
           <Link href="/register">
-            <a className="nav-btn"><FontAwesomeIcon icon={faSignInAlt} size="sm" />  Get Started</a>
+            <a className="nav-btn"><FontAwesomeIcon icon={faSignInAlt} size="sm" /> &nbsp;Register</a>
           </Link>
         </div>
 
