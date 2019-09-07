@@ -192,13 +192,13 @@ class Nav extends Component {
           .links .nav-btn,
           .overlay .nav-btn {
             padding: 8.5px 10px;
-            background-color: rgb(23, 123, 186);
+            background-color: rgb(39, 103, 168);
             border-radius: 5px;
             text-decoration: none;
             color: white;
             font-weight: 600;
             font-size: 0.925rem;
-            border-bottom: 3px solid rgba(0,0,0,0.2);
+            border-bottom: 3px solid rgba(0,0,0,0.3);
           }
 
           .overlay .nav-btn {
@@ -209,12 +209,12 @@ class Nav extends Component {
 
           .links .nav-btn:hover,
           .overlay .nav-btn:hover {
-            background-color: rgba(23, 123, 186, 0.9);
+            background-color: rgba(39, 103, 168, 0.9);
           }
 
           .links .nav-btn:active,
           .overlay .nav-btn:active {
-            background-color: rgb(17, 114, 175);
+            background-color: rgb(31, 85, 140);
           }
         `}</style>
       </nav>

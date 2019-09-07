@@ -119,8 +119,8 @@ class CustomerRegistration extends Component {
               </label>
               <br/>
               <br/>
-              <p style={{color: "rgb(23, 123, 186)"}}>@todo add password confirmation</p>
-              <p style={{color: "rgb(23, 123, 186)"}}>@todo CORS for Firefox: Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://localhost:3001/api/v1/auth/user/create. (Reason: missing token ‘content-type’ in CORS header ‘Access-Control-Allow-Headers’ from CORS preflight channel).</p>
+              <p style={{color: "rgb(39, 103, 168)"}}>@todo add password confirmation</p>
+              <p style={{color: "rgb(39, 103, 168)"}}>@todo CORS for Firefox: Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://localhost:3001/api/v1/auth/user/create. (Reason: missing token ‘content-type’ in CORS header ‘Access-Control-Allow-Headers’ from CORS preflight channel).</p>
               <input type="checkbox" name="" id="" required/> By clicking submit you agree to the <Link href={`/terms`}><a>Terms and Conditions</a></Link> and <Link href={`/privacy`}><a>Privacy Policy</a></Link>
               <br/>
               <br/>
@@ -134,7 +134,7 @@ class CustomerRegistration extends Component {
 
         <style jsx>{`
           .modal {
-            border: 1px solid rgb(23, 123, 186);
+            border: 1px solid rgb(39, 103, 168);
             border-radius: 5px;
             margin: 0 1em 1em 1em;
             text-align: left;
@@ -162,7 +162,7 @@ class CustomerRegistration extends Component {
 
           .btn {
             padding: 8.5px 10px;
-            background-color: rgb(23, 123, 186);
+            background-color: rgb(39, 103, 168);
             border-radius: 5px;
             text-decoration: none;
             color: white;
@@ -170,15 +170,15 @@ class CustomerRegistration extends Component {
             border: none;
             cursor: pointer;
             font-size: 0.925rem;
-            border-bottom: 3px solid rgba(0,0,0,0.2);
+            border-bottom: 3px solid rgba(0,0,0,0.3);
           }
 
           .btn:hover {
-            background-color: rgba(23, 123, 186, 0.9);
+            background-color: rgba(39, 103, 168, 0.9);
           }
 
           .btn:active {
-            background-color: rgb(17, 114, 175);
+            background-color: rgb(31, 85, 140);
           }
         `}</style>
       </>
