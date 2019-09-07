@@ -52,7 +52,7 @@ class Card extends Component {
 
         <style jsx>{`
           .card {
-            border: 1px solid #C5C5C5;
+            border: 1px solid #d8d8d8;
             margin-bottom: -1px;
             display: flex;
             background-color: #FDFDFE;
