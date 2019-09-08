@@ -87,13 +87,7 @@ class Card extends Component {
             align-items: center;
             justify-content: center;
             min-width: 1.5rem;
-            max-width: 1.5rem;
-          }
-
-          @media only screen and (max-width: 480px) {
-            .container {
-              max-width: 0.5rem;
-            }
+            max-width: 2rem;
           }
 
           .arrow {
@@ -126,7 +120,6 @@ class Card extends Component {
             font-size: 0.85rem;
             margin: 10px 5px;
             color: #1a1a1b;
-            cursor: text;
             -webkit-user-select: none; /* webkit (safari, chrome) browsers */
             -moz-user-select: none; /* mozilla browsers */
             -khtml-user-select: none; /* webkit (konqueror) browsers */
