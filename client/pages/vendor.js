@@ -87,7 +87,7 @@ const Vendor = withRouter(({ vendor, vendorId }) => {
         .vendorImage {
           margin: 0.25em;
           width: 40%;
-          border-radius: 100%;
+          border-radius: 50%;
           object-fit: cover;
           -webkit-box-shadow: 0px 0px 28px 0px rgba(128,128,128,0.15);
           -moz-box-shadow: 0px 0px 28px 0px rgba(128,128,128,0.15);
