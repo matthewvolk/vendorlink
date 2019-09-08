@@ -136,8 +136,8 @@ const Vendor = withRouter(({ vendor, vendorId }) => {
         }
 
         @media only screen and (max-width: 480px) {
-          img {
-            width: 75%;
+          .work-gallery-item {
+            width: 100%;
           }
         }
 
