@@ -17,6 +17,11 @@ const Vendor = withRouter(({ vendor, vendorId }) => {
           <p><strong>Hourly Rate:</strong> ${vendor.rate.toFixed(2)}</p>
           <p><strong>Time Zone:</strong> PST</p>
           <p><strong>Working Hours:</strong> 8:00 AM PST - 5:00 PM PST</p>
+          <p style={{display: "flex"}}><strong>Skills:</strong>&nbsp;
+            {vendor.skills.map((skill, index) => (
+              <div key={index}>{skill}&nbsp;</div>
+            ))}
+          </p>
         </div>
       </div>
 
