@@ -51,6 +51,7 @@ const Vendor = withRouter(({ vendor, vendorId }) => {
 
         img {
           width: 50%;
+          height: 50%;
           margin-right: 1rem;
           border-radius: 5px;
         }
