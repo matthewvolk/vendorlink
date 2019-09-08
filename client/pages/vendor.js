@@ -68,10 +68,6 @@ const Vendor = withRouter(({ vendor, vendorId }) => {
           margin: 1em 0 2em 0;
         }
 
-        .hero .title {
-          max-width: 55%;
-        }
-
         .hero .title h1 {
           margin-top: 0;
         }
@@ -98,8 +94,9 @@ const Vendor = withRouter(({ vendor, vendorId }) => {
           padding-bottom: 1.5rem;
           border-radius: 7px;
           max-width: 22rem;
-          margin: 0 0 0 1em;
+          margin: 0 0 0 2em;
           font-size: 0.9rem;
+          flex-shrink: 0;
         }
 
         @media only screen and (max-width: 666px) {
