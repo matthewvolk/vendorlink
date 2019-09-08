@@ -2,6 +2,8 @@ import Layout from '../components/layout'
 import { withRouter } from 'next/router'
 import Link from 'next/link'
 import fetch from 'isomorphic-unfetch'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPaperPlane, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
 
 const Vendor = withRouter(({ vendor, vendorId }) => {
 
@@ -18,21 +20,31 @@ const Vendor = withRouter(({ vendor, vendorId }) => {
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi recusandae, obcaecati esse quia deleniti id explicabo autem sed consequatur corrupti molestias, libero aperiam illo odio tempora ipsum. Repellendus, enim cupiditate.</p>
           </div>
           <div className="quick-facts">
-          <div className="vendorImageContainer">
-            <img className="vendorImage" src="https://i.imgur.com/CnIhxtS.png" alt=""/>
+            <div className="vendorImageContainer">
+              <img className="vendorImage" src="https://i.imgur.com/CnIhxtS.png" alt=""/>
+            </div>
+            <div className="fact"><strong>Hourly Rate:</strong> ${vendor.rate.toFixed(2)}</div>
+            <hr/>
+            <div className="fact"><strong>Location:</strong> Ukraine</div>
+            <hr/>
+            <div className="fact"><strong>Time Zone:</strong> EEST</div>
+            <hr/>
+            <div className="fact"><strong>Working Hours:</strong> 6:00 AM PST - 3:00 PM PST</div>
+            <hr/>
+            <div className="fact" style={{display: "flex", flexWrap: "wrap"}}><strong>Skills:</strong>&nbsp;
+              {vendor.skills.map((skill, index) => (
+                <span key={index}>{ (index ? ', ' : '') + skill}</span>
+              ))}
+            </div>
+            <div className="links">
+              <Link href={`/custom-quote?vendor=${vendor.name}`}>
+                <a className="btn green link"><FontAwesomeIcon icon={faPaperPlane} />&nbsp;&nbsp;Contact</a>
+              </Link>
+              <Link href={`/`}>
+                <a className="btn blue link"><FontAwesomeIcon icon={faExternalLinkAlt} />&nbsp;&nbsp; Visit Website</a>
+              </Link>
+            </div>
           </div>
-          <div className="fact"><strong>Hourly Rate:</strong> ${vendor.rate.toFixed(2)}</div>
-          <hr/>
-          <div className="fact"><strong>Time Zone:</strong> PST</div>
-          <hr/>
-          <div className="fact"><strong>Working Hours:</strong> 8:00 AM PST - 5:00 PM PST</div>
-          <hr/>
-          <div className="fact" style={{display: "flex", flexWrap: "wrap"}}><strong>Skills:</strong>&nbsp;
-            {vendor.skills.map((skill, index) => (
-              <span key={index}>{ (index ? ', ' : '') + skill}</span>
-            ))}
-          </div>
-        </div>
         </div>
       </div>
 
@@ -42,19 +54,13 @@ const Vendor = withRouter(({ vendor, vendorId }) => {
       <div className="gallery">
         <div className="container">
           <div className="image-flex">
-            <img src="https://cdn.dribbble.com/users/4859/screenshots/7049291/media/3c5e9fb0b74517cf84afadbe1af24ae3.png" alt="previous work example" />
-            <img src="https://cdn.dribbble.com/users/952958/screenshots/5567327/modern_2x.png" alt="previous work example" />
-            <img src="https://cdn.dribbble.com/users/952958/screenshots/4828084/cart.png" alt="previous work example" />
-            <img src="https://cdn.dribbble.com/users/235909/screenshots/5833556/dribbble_2x.png" alt="previous work example" />
-            <img src="https://cdn.dribbble.com/users/1875714/screenshots/5621548/dribbble_2x.png" alt="previous work example" />
+            <img className="work-gallery-item" src="https://cdn.dribbble.com/users/4859/screenshots/7049291/media/3c5e9fb0b74517cf84afadbe1af24ae3.png" alt="previous work example" />
+            <img className="work-gallery-item" src="https://cdn.dribbble.com/users/952958/screenshots/5567327/modern_2x.png" alt="previous work example" />
+            <img className="work-gallery-item" src="https://cdn.dribbble.com/users/952958/screenshots/4828084/cart.png" alt="previous work example" />
+            <img className="work-gallery-item" src="https://cdn.dribbble.com/users/235909/screenshots/5833556/dribbble_2x.png" alt="previous work example" />
+            <img className="work-gallery-item" src="https://cdn.dribbble.com/users/1875714/screenshots/5621548/dribbble_2x.png" alt="previous work example" />
           </div>
         </div>
-      </div>
-
-      <div className="container" style={{display: "flex", justifyContent: "center", textAlign: "center"}}>
-        <Link href={`/custom-quote?vendor=${vendor.name}`}>
-          <a className="btn">Contact {vendor.name}</a>
-        </Link>
       </div>
 
       <style jsx>{`
@@ -80,7 +86,7 @@ const Vendor = withRouter(({ vendor, vendorId }) => {
 
         .vendorImage {
           margin: 0.25em;
-          width: 50%;
+          width: 40%;
           border-radius: 100%;
           object-fit: cover;
           -webkit-box-shadow: 0px 0px 28px 0px rgba(128,128,128,0.15);
@@ -90,10 +96,10 @@ const Vendor = withRouter(({ vendor, vendorId }) => {
 
         .quick-facts {
           background-color: #f5f5f5;
-          padding: 1rem;
+          padding: 1.25rem;
           padding-bottom: 1.5rem;
           border-radius: 7px;
-          max-width: 22rem;
+          max-width: 20rem;
           margin: 0 0 0 2em;
           font-size: 0.9rem;
           flex-shrink: 0;
@@ -105,7 +111,8 @@ const Vendor = withRouter(({ vendor, vendorId }) => {
           }
 
           .quick-facts {
-            margin: 0;
+            margin: 0 auto;
+            margin-top: 1em;
           }
         }
 
@@ -117,10 +124,10 @@ const Vendor = withRouter(({ vendor, vendorId }) => {
           height: 1px;
           background-color: #c5c5c5;
           border: none;
-          margin: 0.75rem 0;
+          margin: 0.65rem 0;
         }
 
-        img {
+        .work-gallery-item {
           width: 50%;
           height: 50%;
           margin-right: 1rem;
@@ -154,8 +161,7 @@ const Vendor = withRouter(({ vendor, vendorId }) => {
         }
 
         .btn {
-          padding: 15px;
-          background-color: rgb(26, 186, 69);
+          padding: 12.5px;
           border-radius: 5px;
           -webkit-text-decoration: none;
           text-decoration: none;
@@ -163,16 +169,50 @@ const Vendor = withRouter(({ vendor, vendorId }) => {
           font-weight: 600;
           font-size: 0.925rem;
           border-bottom: 3px solid rgba(0,0,0,0.3);
-          min-width: 100%;
+          width: 47.5%;
           box-sizing: border-box;
+          margin-top: 1rem;
         }
 
-        .btn:hover {
+        .green {
+          background-color: rgb(26, 186, 69)
+        }
+
+        .green:hover {
           background-color: rgba(26, 186, 69, 0.9);
         }
 
-        .btn:active {
+        .green:active {
           background-color: rgb(21, 154, 57);
+        }
+
+        .blue {
+          background-color: rgb(39, 103, 168);
+        }
+
+        .blue:hover {
+          background-color: rgba(39, 103, 168, 0.9);
+        }
+
+        .blue:active {
+          background-color: rgb(31, 85, 140);
+        }
+
+        .quick-facts .links {
+          display: flex;
+          justify-content: space-between;
+          text-align: center;
+          margin-top: 0.5em;
+        }
+
+        @media only screen and (max-width: 480px) {
+          .quick-facts .links {
+            flex-direction: column;
+          }
+
+          .btn {
+            width: 100%;
+          }
         }
       `}</style>
     </Layout>
