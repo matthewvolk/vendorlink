@@ -26,7 +26,7 @@ export default withRouter(props => {
       title={`Submit a free quote | VendorLink`}
     >
       <section className="container">
-        <h1>Custom Quote {(() => { if (props.router.query.vendor) return `for ${props.router.query.vendor}`; })(props)}</h1>
+        <h1>Contact {(() => { if (props.router.query.vendor) return `${props.router.query.vendor}`; })(props)}</h1>
 
         <form onSubmit={handleSubmit} id="rfq">
           <p>
