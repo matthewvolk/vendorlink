@@ -15,3 +15,13 @@ vendorlink/
 ├── api/           # API server
 ├── client/        # Frontend Next.js app
 ```
+
+# To Do
+- [] Add Google Analytics
+- [] Add PostgreSQL database
+- [] Add user authentication
+- [] Implement one vote per vendor per user
+- [] Implement vendor sorting based on rank number
+- [] Add "previous work" and "reviews" sliders on vendor page
+- [] Finish implementing vendor contact feature "custom-quote"
+- [] Add vendor dashboard with ability to purchase promoted ranks
