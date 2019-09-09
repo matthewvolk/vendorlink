@@ -54,7 +54,7 @@ const Vendor = withRouter(({ vendor, vendorId }) => {
       <div className="gallery">
         <div className="container">
           <div className="image-flex">
-            <img className="work-gallery-item" src="https://cdn.dribbble.com/users/4859/screenshots/7049291/media/3c5e9fb0b74517cf84afadbe1af24ae3.png" alt="previous work example" />
+            <img className="work-gallery-item" src="https://cdn.dribbble.com/users/45787/screenshots/6825031/concreetshot_2x.png" alt="previous work example" />
             <img className="work-gallery-item" src="https://cdn.dribbble.com/users/4859/screenshots/5923382/sweep-web_2x.png" alt="previous work example" />
             <img className="work-gallery-item" src="https://cdn.dribbble.com/users/952958/screenshots/4828084/cart.png" alt="previous work example" />
             <img className="work-gallery-item" src="https://cdn.dribbble.com/users/235909/screenshots/5833556/dribbble_2x.png" alt="previous work example" />
