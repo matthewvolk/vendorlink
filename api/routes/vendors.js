@@ -3,7 +3,7 @@ var router = express.Router()
 
 const data = {
   vendors: [
-    { id: 3, name: "Miko Batoon - Web Designer", rate: 60.00, slug: "miko-batoon", skills: ["UI/UX", "App Design", "Web Design"], timezone: "@todo", votes: "14" },
+    { id: 3, name: "Miko Batoon - Web Designer", rate: 60.00, slug: "miko-batoon", skills: ["UI/UX", "App Design", "Web Design"], timezone: "@todo", votes: "0" },
     { id: 1, name: "Soft Loft - Magento Developers", rate: 65.00, slug: "petr-datsko", skills: ["Magento", "PHP", "Laravel", "Symfony"], timezone: "@todo", votes: "0" },
     { id: 2, name: "Clawrock - Shopify Developers", rate: 65.00, slug: "sergey-vlasov", skills: ["Magento", "PHP"], timezone: "@todo", votes: "0" },
     { id: 4, name: "Jan Smith - Web Designer", rate: 55.00, slug: "jan-smith", skills: ["UI", "UX", "Product Design"], timezone: "@todo", votes: "0" },
