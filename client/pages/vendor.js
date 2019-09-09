@@ -17,7 +17,7 @@ const Vendor = withRouter(({ vendor, vendorId }) => {
           <div className="title">
             <h1>{vendor.name}</h1>
             <p className="featured-quote" style={{color: "grey"}}>"I loved working with {vendor.name}!" - Verified Buyer</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi recusandae, obcaecati esse quia deleniti id explicabo autem sed consequatur corrupti molestias, libero aperiam illo odio tempora ipsum. Repellendus, enim cupiditate.</p>
+            <p className="featured-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi recusandae, obcaecati esse quia deleniti id explicabo autem sed consequatur corrupti molestias, libero aperiam illo odio tempora ipsum. Repellendus, enim cupiditate.</p>
           </div>
           <div className="quick-facts">
             <div className="vendorImageContainer">
@@ -45,6 +45,7 @@ const Vendor = withRouter(({ vendor, vendorId }) => {
               </Link>
             </div>
           </div>
+          <p className="sub-featured-quote" style={{color: "#555", padding: "1em", marginTop: "2em", borderLeft: "5px solid lightgrey"}}>"I loved working with {vendor.name}!" - Verified Buyer</p>
         </div>
       </div>
 
@@ -59,6 +60,21 @@ const Vendor = withRouter(({ vendor, vendorId }) => {
             <img className="work-gallery-item" src="https://cdn.dribbble.com/users/952958/screenshots/4828084/cart.png" alt="previous work example" />
             <img className="work-gallery-item" src="https://cdn.dribbble.com/users/235909/screenshots/5833556/dribbble_2x.png" alt="previous work example" />
             <img className="work-gallery-item" src="https://cdn.dribbble.com/users/1875714/screenshots/5621548/dribbble_2x.png" alt="previous work example" />
+          </div>
+        </div>
+      </div>
+
+      <div className="container">
+        <h2 style={{margin: "0"}}>Reviews:</h2>
+      </div>
+      <div className="gallery">
+        <div className="container">
+          <div className="image-flex">
+            <img className="work-gallery-item" src="https://cdn.dribbble.com/users/644755/screenshots/4723422/rec-3.png" alt="previous work example" />
+            <img className="work-gallery-item" src="https://cdn.dribbble.com/users/644755/screenshots/4723422/rec-3.png" alt="previous work example" />
+            <img className="work-gallery-item" src="https://cdn.dribbble.com/users/644755/screenshots/4723422/rec-3.png" alt="previous work example" />
+            <img className="work-gallery-item" src="https://cdn.dribbble.com/users/644755/screenshots/4723422/rec-3.png" alt="previous work example" />
+            <img className="work-gallery-item" src="https://cdn.dribbble.com/users/644755/screenshots/4723422/rec-3.png" alt="previous work example" />
           </div>
         </div>
       </div>
@@ -106,6 +122,10 @@ const Vendor = withRouter(({ vendor, vendorId }) => {
           flex-shrink: 0;
         }
 
+        .sub-featured-text {
+          display: none;
+        }
+
         @media only screen and (max-width: 666px) {
           .hero {
             flex-direction: column;
@@ -114,6 +134,15 @@ const Vendor = withRouter(({ vendor, vendorId }) => {
           .quick-facts {
             margin: 0 auto;
             margin-top: 1em;
+          }
+
+          .featured-text,
+          .featured-quote {
+            display: none;
+          }
+
+          .sub-featured-text {
+            display: block;
           }
         }
 
