@@ -30,7 +30,14 @@ const Index = ({ vendors }) => (
 
       <div className="background">
         <div className="container-cards" style={{maxWidth: "1180px"}}>
-          {vendors.map(vendor => (
+          {/** 
+
+            @todo sort vendors by filters selected by user
+
+          */}
+          {vendors
+            .sort((a,b) => parseInt(b.votes) - parseInt(a.votes))
+            .map(vendor => (
             <Card key={vendor.slug} name={vendor.name} rate={vendor.rate.toFixed(2)} slug={vendor.slug} skills={vendor.skills} votes={vendor.votes} />
           ))}
         </div>
