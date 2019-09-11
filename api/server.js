@@ -21,6 +21,21 @@ app.use(cors({
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
+const Sequelize = require('sequelize');
+const sequelize = new Sequelize('vendorlink', 'vendorlink', null, {
+  host: 'localhost',
+  dialect: 'postgres',
+});
+
+sequelize
+  .authenticate()
+  .then(() => {
+    console.log('Connection has been established successfully.');
+  })
+  .catch(err => {
+    console.error('Unable to connect to the database:', err);
+  });
+
 app.use('/api/v1/checkout', checkout)
 app.use('/api/v1/vendors', vendors)
 app.use('/api/v1/auth', auth)
