@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('vendorlink', 'vendorlink', null, {
+const sequelize = new Sequelize('vendorlink', 'vendorlink', 'test', {
   host: 'localhost',
   dialect: 'postgres',
 });
