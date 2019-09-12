@@ -40,7 +40,7 @@ const Vendor = withRouter(({ vendor, vendorId }) => {
               <Link href={`/custom-quote?vendor=${vendor.name}`}>
                 <a className="btn green link"><FontAwesomeIcon icon={faPaperPlane} />&nbsp;&nbsp;Contact</a>
               </Link>
-              <Link href={`${vendor.websiteUrl ? vendor.websiteUrl : '#'}`}>
+              <Link href={`${vendor.websiteUrl ? vendor.websiteUrl + '/?ref=vendorlink' : '#'}`}>
                 <a target={`${!vendor.websiteUrl ? '' : '_blank'}`} className={`btn link ${!vendor.websiteUrl ? 'disabled' : 'blue'}`}><FontAwesomeIcon icon={faExternalLinkAlt} />&nbsp;&nbsp; Visit Website</a>
               </Link>
             </div>
