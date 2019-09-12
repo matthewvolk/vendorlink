@@ -21,7 +21,7 @@ const Vendor = withRouter(({ vendor, vendorId }) => {
           </div>
           <div className="quick-facts">
             <div className="vendorImageContainer">
-              <img className="vendorImage" src="https://i.imgur.com/olo3FbL.jpg" alt=""/>
+              <img className="vendorImage" src="https://i.imgur.com/bRhQqAm.jpg" alt=""/>
             </div>
             <div className="fact"><strong>Hourly Rate:</strong> ${vendor.rate.toFixed(2)}</div>
             <hr/>
@@ -106,9 +106,6 @@ const Vendor = withRouter(({ vendor, vendorId }) => {
           height: 40%;
           border-radius: 50%;
           object-fit: cover;
-          -webkit-box-shadow: 0px 0px 28px 0px rgba(128,128,128,0.15);
-          -moz-box-shadow: 0px 0px 28px 0px rgba(128,128,128,0.15);
-          box-shadow: 0px 0px 28px 0px rgba(128,128,128,0.15);
         }
 
         .quick-facts {
