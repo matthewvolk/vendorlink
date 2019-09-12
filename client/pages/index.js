@@ -38,7 +38,7 @@ const Index = ({ vendors }) => (
           {vendors
             .sort((a,b) => parseInt(b.votes) - parseInt(a.votes))
             .map(vendor => (
-            <Card key={vendor.slug} name={vendor.name} rate={vendor.rate.toFixed(2)} slug={vendor.slug} skills={vendor.skills} votes={vendor.votes} />
+            <Card key={vendor.slug} name={vendor.name} rate={vendor.rate.toFixed(2)} slug={vendor.slug} skills={vendor.skills} votes={vendor.votes} websiteUrl={vendor.websiteUrl} />
           ))}
         </div>
       </div>

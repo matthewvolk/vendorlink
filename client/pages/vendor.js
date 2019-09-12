@@ -40,8 +40,8 @@ const Vendor = withRouter(({ vendor, vendorId }) => {
               <Link href={`/custom-quote?vendor=${vendor.name}`}>
                 <a className="btn green link"><FontAwesomeIcon icon={faPaperPlane} />&nbsp;&nbsp;Contact</a>
               </Link>
-              <Link href={`/`}>
-                <a className="btn blue link"><FontAwesomeIcon icon={faExternalLinkAlt} />&nbsp;&nbsp; Visit Website</a>
+              <Link href={`${vendor.websiteUrl ? vendor.websiteUrl : '#'}`}>
+                <a target={`${!vendor.websiteUrl ? '' : '_blank'}`} className={`btn link ${!vendor.websiteUrl ? 'disabled' : 'blue'}`}><FontAwesomeIcon icon={faExternalLinkAlt} />&nbsp;&nbsp; Visit Website</a>
               </Link>
             </div>
           </div>
@@ -120,6 +120,11 @@ const Vendor = withRouter(({ vendor, vendorId }) => {
           margin: 0 0 0 2em;
           font-size: 0.9rem;
           flex-shrink: 0;
+        }
+
+        .disabled {
+          background-color: rgba(39, 103, 168, 0.5);
+          cursor: not-allowed;
         }
 
         .sub-featured-quote {
