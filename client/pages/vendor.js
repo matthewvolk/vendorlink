@@ -21,7 +21,7 @@ const Vendor = withRouter(({ vendor, vendorId }) => {
           </div>
           <div className="quick-facts">
             <div className="vendorImageContainer">
-              <img className="vendorImage" src="https://i.imgur.com/7O9y5lg.png" alt=""/>
+              <img className="vendorImage" src="https://i.imgur.com/olo3FbL.jpg" alt=""/>
             </div>
             <div className="fact"><strong>Hourly Rate:</strong> ${vendor.rate.toFixed(2)}</div>
             <hr/>
