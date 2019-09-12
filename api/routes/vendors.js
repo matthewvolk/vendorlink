@@ -15,6 +15,12 @@ const data = {
 }
 
 router.get('/', (req, res) => {
+  /**
+   * @todo
+   * connect to database
+   * query all vendor data
+   * build a JSON object like data above
+   */
   res.json(data);
 })
 
