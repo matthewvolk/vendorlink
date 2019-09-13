@@ -12,7 +12,7 @@ const Index = ({ vendors }) => (
 
       <div style={{borderBottom: "1px solid #EAECEF"}}>
         <div className="container">
-          <h1 className="hero-text" style={{marginTop: "0.5rem"}}>Hire Better Freelancers.</h1>
+          <h1 className="hero-text">Hire Better Freelancers.</h1>
           <p style={{margin: "1em 0"}} className="tagline">Meet &amp; hire amazing talent from our invite-only community of elite web developers, designers, and marketers. *Note: This website is in development, and not yet fully functional. Feel free to browse around in the meantime!</p>
           {/* <Link href={`/our-process`}>
             <a>What makes us different?</a>
@@ -86,6 +86,10 @@ const Index = ({ vendors }) => (
         padding-top: 0;
         padding-bottom: 0;
       }
+    }
+
+    .hero-text {
+      margin-top: 0.5em;
     }
   `}</style>
 
