@@ -21,23 +21,12 @@ app.use(cors({
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-const Sequelize = require('sequelize');
-const sequelize = new Sequelize('vendorlink', 'vendorlink', 'test', {
-  host: 'localhost',
-  dialect: 'postgres',
-
-  pool: {
-    max: 5,
-    min: 0,
-    acquire: 30000,
-    idle: 10000
-  }
-});
-
+// Test Sequelize connection
+const sequelize = require('./models/index').sequelize;
 sequelize
   .authenticate()
   .then(() => {
-    console.log('Database connection has been established successfully.');
+    console.log('Connection has been established successfully.');
   })
   .catch(err => {
     console.error('Unable to connect to the database:', err);
