@@ -4,7 +4,7 @@ const Footer = () => (
   <footer>
     <div className="container">
       <div>
-        <p>&copy; {new Date().getFullYear()} <a href="https://volk.dev" target="_blank">volk.dev</a></p>
+        <p>&copy; {new Date().getFullYear()} VendorLink</p>
       </div>
       <div className="links">
         <Link href="/terms">
