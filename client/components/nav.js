@@ -1,7 +1,5 @@
 import { Component } from 'react'
 import Link from 'next/link'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSignInAlt } from '@fortawesome/free-solid-svg-icons'
 
 class Nav extends Component {
   constructor(props) {
@@ -43,7 +41,7 @@ class Nav extends Component {
             <a className="nav-link">Our Process</a>
           </Link>
           <Link href="/register">
-            <a className="nav-btn"><FontAwesomeIcon icon={faSignInAlt} size="sm" /> &nbsp;Register</a>
+            <a className="nav-btn">Register</a>
           </Link>
         </div>
 
@@ -52,7 +50,7 @@ class Nav extends Component {
             <a className="nav-link">Our Process</a>
           </Link>
           <Link href="/register">
-            <a className="nav-btn"><FontAwesomeIcon icon={faSignInAlt} size="sm" /> &nbsp;Register</a>
+            <a className="nav-btn">Register</a>
           </Link>
         </div>
 
@@ -166,7 +164,7 @@ class Nav extends Component {
           .links .nav-link,
           .overlay .nav-link {
             padding: 10px;
-            margin-right: 1em;
+            margin-right: 0.65em;
             font-weight: 500;
             text-decoration: none;
             color: rgb(127, 132, 138);
@@ -191,7 +189,7 @@ class Nav extends Component {
 
           .links .nav-btn,
           .overlay .nav-btn {
-            padding: 8.5px 10px;
+            padding: 6.25px 12px;
             background-color: rgb(39, 103, 168);
             border-radius: 5px;
             text-decoration: none;
