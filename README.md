@@ -20,6 +20,7 @@ vendorlink/
 - [x] Add Google Analytics
 - [x] Add PostgreSQL database
 - [ ] Add user authentication
+  - [ ] Create User model
 - [ ] Implement one vote per vendor per user
 - [x] Implement vendor sorting based on rank number
 - [ ] Add "previous work" and "reviews" sliders on vendor page
