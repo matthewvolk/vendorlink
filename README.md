@@ -21,6 +21,8 @@ vendorlink/
 - [x] Add PostgreSQL database
 - [ ] Add user authentication
   - [ ] Create User model
+  - [ ] Create ![Authorization Helper Function](https://dev.to/jolvera/user-authentication-with-nextjs-4023#authorization-helper-function)
+  - [ ] Choose unique key to return from backend as cookie token
 - [ ] Implement one vote per vendor per user
 - [x] Implement vendor sorting based on rank number
 - [ ] Add "previous work" and "reviews" sliders on vendor page
