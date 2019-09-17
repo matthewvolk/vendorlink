@@ -11,13 +11,15 @@ router.post('/user/create', (req, res) => {
     "last_name": req.body.last_name,
     "email": req.body.email,
     "encrypted_password": hash,
+    "req_headers": req.headers
   })
 
   res.json({
     "first_name": req.body.first_name,
     "last_name": req.body.last_name,
     "email": req.body.email,
-    "encrypted_password": hash
+    "encrypted_password": hash,
+    "req_headers": req.headers
   })
 
   /**
