@@ -17,15 +17,5 @@ vendorlink/
 ```
 
 # To Do
-- [x] Add Google Analytics
-- [x] Add PostgreSQL database
-- [ ] Add user authentication
-  - [ ] Create User model: [Link](https://stackoverflow.com/questions/34120548/using-bcrypt-with-sequelize-model)
-  - [ ] Create Authorization Helper Function: [Link](https://dev.to/jolvera/user-authentication-with-nextjs-4023#authorization-helper-function)
-  - [ ] Choose unique key to return from backend as cookie token
-- [ ] Implement one vote per vendor per user
-- [x] Implement vendor sorting based on rank number
-- [ ] Add "previous work" and "reviews" sliders on vendor page
-- [ ] Finish implementing vendor contact feature "custom-quote"
-- [ ] Add vendor dashboard with ability to purchase promoted ranks
-- [ ] Add Lazy Loading for FontAwesome and images: [Link](https://github.com/twobin/react-lazyload)
+**Note:** In order to consolidate brain dumps, todo's, and random notes, I've created a public Notion.so link for anyone interested to see the current status of the project, future roadmap, timelines, notes, etc. 
+- **Notion Link:** [https://www.notion.so/vndrlnk/VendorLink-Planning-db1ba5e79df345209d16d167a3206c39](https://www.notion.so/vndrlnk/VendorLink-Planning-db1ba5e79df345209d16d167a3206c39)
