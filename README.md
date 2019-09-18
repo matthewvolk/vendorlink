@@ -8,6 +8,8 @@ Here is a list of all the big technologies we use:
 - **Express.js**: API webserver
 - **Next.js**: Frontend Next.js app
 - **Stripe**: for E-commerce functionality
+- **Sequelize.js**: ORM
+- **PostgreSQL**: Database
 
 #### Folder structure
 ```sh
