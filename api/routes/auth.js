@@ -1,6 +1,5 @@
 var express = require('express')
 var router = express.Router()
-// const User = require('../models/user')
 const bcrypt = require('bcrypt')
 
 router.post('/user/create', (req, res) => {
@@ -23,11 +22,11 @@ router.post('/user/create', (req, res) => {
   })
 
   /**
-   * @todo add passport.js?
-   * @todo save user to database
-   * @todo should this return a cookie, session, token, etc.?
+   * @todo add passport.js? => Done
+   * @todo save user to database => Done
+   * @todo should this return a cookie, session, token, etc.? => Token
    * 
-   * @todo add Sequelize CLI?
+   * @todo add Sequelize CLI? => Yes
    * https://www.djamware.com/post/5bf94d9a80aca747f4b9ce9f/secure-nodejs-expressjs-and-postgresql-api-using-passportjs
    * 
    * @todo add API call in /client/components/nav component to check if user is logged in to dynamically change nav items
@@ -52,10 +51,6 @@ router.post('/user/create', (req, res) => {
    * This example uses a GitHub username ID as a cookie, but that might be insecure if someone guesses the ID:
    * https://github.com/zeit/next.js/blob/canary/examples/with-cookie-auth/www/utils/auth.js
    * Or look at this: https://auth0.com/blog/next-js-authentication-tutorial/
-   * 
-   * @todo Implement chat dashboard: https://pusher.com/tutorials/chat-sentiment-analysis-nextjs
-   * @note At the end of a job, users should rate vendors, and the rating system approves good 
-   * reviews while suspending vendors that get bad reviews until the issue is settled.
    * 
    * @todo CORS for Firefox:
    * Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://localhost:3001/api/v1/auth/user/create. (Reason: missing token ‘content-type’ in CORS header ‘Access-Control-Allow-Headers’ from CORS preflight channel).
