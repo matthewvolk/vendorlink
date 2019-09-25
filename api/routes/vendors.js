@@ -113,8 +113,8 @@ router.post("/create", (req, res) => {
   res.json({
     email: req.body.email,
     password: req.body.password,
-    "first name": req.body.first_name,
-    "last name": req.body.last_name
+    first_name: req.body.first_name,
+    last_name: req.body.last_name
   });
 
   /**
