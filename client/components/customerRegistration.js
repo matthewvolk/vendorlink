@@ -36,7 +36,7 @@ class CustomerRegistration extends Component {
       return;
     }
 
-    fetch(`${process.env.API_URL}/api/v1/auth/user/create`, {
+    fetch(`${process.env.API_URL}/api/v1/users/create`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

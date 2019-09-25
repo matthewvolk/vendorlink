@@ -2,7 +2,7 @@ var express = require('express')
 var router = express.Router()
 const bcrypt = require('bcrypt')
 
-router.post('/user/create', (req, res) => {
+router.post('/create', (req, res) => {
   let hash = bcrypt.hashSync(req.body.password, 10);
 
   console.log({
@@ -56,26 +56,6 @@ router.post('/user/create', (req, res) => {
    * Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://localhost:3001/api/v1/auth/user/create. (Reason: missing token ‘content-type’ in CORS header ‘Access-Control-Allow-Headers’ from CORS preflight channel).
    * An error occured, not redirecting the user TypeError: "NetworkError when attempting to fetch resource." index.js:1
    * Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://localhost:3001/api/v1/auth/user/create. (Reason: CORS request did not succeed).
-   */
-})
-
-router.post('/vendor/apply', (req, res) => {
-  res.json({
-    "email": req.body.email,
-    "password": req.body.password,
-    "first name": req.body.first_name,
-    "last name": req.body.last_name,
-  })
-
-  /**
-   * @todo this route is an application to become a vendor. 
-   * This shouldn't create a new Vendor, rather it should send Andrea and myself an email with
-   * details about the vendor so we can reach out to the vendor for an interview. 
-   * If they pass the interview, I should manually create the vendor using the Sequelize CLI
-   * But they definitely should not have the ability to create an account without Andrea and I knowing
-   * 
-   * @todo once vendors have an approved account, should they be able to post their own jobs? 
-   * Probably not. Discuss this. 
    */
 })
 

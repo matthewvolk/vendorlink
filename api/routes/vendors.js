@@ -29,17 +29,26 @@ router.get('/:id', (req, res) => {
   res.json(vendor[0])
 })
 
+router.post('/create', (req, res) => {
+  res.json({
+    "email": req.body.email,
+    "password": req.body.password,
+    "first name": req.body.first_name,
+    "last name": req.body.last_name,
+  })
+
+  /**
+   * @todo create vendor with 'active' property set to false
+   */
+})
+
 router.post('/rankup' , (req, res) => {
   /**
    * @todo 
    * retrieve id of vendor
    * retrieve id of user
    * connect to db
-   * update vendor rank
-   * switch "hasVoted" property of user to "true" for that vendor id
-   * @todo figure out how to persist up/downvote hover state on frontend if "hasVoted" property is true for each vendor for each user
-   * disconnect from db
-   * return "ok" or "err"
+   * add row to UserVendorVotes table
    */
 })
 

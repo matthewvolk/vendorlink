@@ -25,7 +25,7 @@ sequelize
 
 app.use('/api/v1/checkout', require('./routes/checkout'))
 app.use('/api/v1/vendors', require('./routes/vendors'))
-app.use('/api/v1/auth', require('./routes/auth'))
+app.use('/api/v1/users', require('./routes/users'))
 app.get('/', (req, res) => res.json({ "version": 1 }))
 
 app.listen(port, () => console.log(`\n> VendorLink API listening on port http://localhost:${port}!`))
