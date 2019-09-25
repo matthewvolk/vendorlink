@@ -6,6 +6,7 @@ class Nav extends Component {
     super(props);
     this.state = { active: false };
     this.hamburgerToggle = this.hamburgerToggle.bind(this);
+    this.resetNav = this.resetNav.bind(this);
   }
 
   hamburgerToggle() {
