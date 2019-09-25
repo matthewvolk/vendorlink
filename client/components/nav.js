@@ -1,37 +1,34 @@
-import { Component } from 'react'
-import Link from 'next/link'
+import { Component } from "react";
+import Link from "next/link";
 
 class Nav extends Component {
   constructor(props) {
     super(props);
-    this.state = { active: false }
-    this.hamburgerToggle = this.hamburgerToggle.bind(this)
+    this.state = { active: false };
+    this.hamburgerToggle = this.hamburgerToggle.bind(this);
   }
 
-  hamburgerToggle () {
-    this.setState({active: !this.state.active})
-    document.querySelector(".overlay").classList.toggle("show")
+  hamburgerToggle() {
+    this.setState({ active: !this.state.active });
+    document.querySelector(".overlay").classList.toggle("show");
   }
 
-  resetNav () { 
-    this.setState({active: false}); 
-    document.querySelector(".overlay").classList.remove("show")
+  resetNav() {
+    this.setState({ active: false });
+    document.querySelector(".overlay").classList.remove("show");
   }
-  
-  render () {
+
+  render() {
     return (
       <nav>
         <div className="logo">
           <Link href="/">
-            {/** 
-              * @todo this.resetNav throws an error message when called: "this.setState is not a function" 
-              * Error video: https://drive.google.com/open?id=1W1owz8ss4SNp1ycyXcJcDj0GTYKMtFTQ
-              */}
-            <a 
-              onClick={this.resetNav} 
-              className="logo-link"
-            >
-              <img src="/static/logo.svg" alt="Logo" width="30px"/>
+            {/**
+             * @todo this.resetNav throws an error message when called: "this.setState is not a function"
+             * Error video: https://drive.google.com/open?id=1W1owz8ss4SNp1ycyXcJcDj0GTYKMtFTQ
+             */}
+            <a onClick={this.resetNav} className="logo-link">
+              <img src="/static/logo.svg" alt="Logo" width="30px" />
               <p>VendorLink</p>
             </a>
           </Link>
@@ -54,16 +51,17 @@ class Nav extends Component {
           </Link>
         </div>
 
-        <button 
+        <button
           type="button"
-          className={`hamburger hamburger--slider-r ${this.state.active && 'is-active'}`} 
+          className={`hamburger hamburger--slider-r ${this.state.active &&
+            "is-active"}`}
           onClick={this.hamburgerToggle}
         >
           <span className="hamburger-box">
             <span className="hamburger-inner"></span>
           </span>
         </button>
-  
+
         <style jsx>{`
           @media only screen and (min-width: 480px) {
             .hamburger {
@@ -117,19 +115,19 @@ class Nav extends Component {
             width: 30px;
           }
 
-          .hamburger-inner, 
-          .hamburger-inner:after, 
+          .hamburger-inner,
+          .hamburger-inner:after,
           .hamburger-inner:before {
             width: 30px;
             height: 3px;
-            background-color: #1C262E;
+            background-color: #1c262e;
           }
 
-          .hamburger.is-active:hover, 
+          .hamburger.is-active:hover,
           .hamburger:hover {
-            opacity: .9;
+            opacity: 0.9;
           }
-          
+
           nav {
             display: flex;
             align-items: center;
@@ -142,15 +140,15 @@ class Nav extends Component {
           .logo {
             z-index: 25;
           }
-  
+
           .logo-link {
             display: flex;
             align-items: center;
             text-decoration: none;
           }
-  
+
           .logo-link > p {
-            color: #1C262E;
+            color: #1c262e;
             font-weight: 700;
             font-size: 1.35rem;
             font-family: "Hind Vadodara", sans-serif;
@@ -160,7 +158,7 @@ class Nav extends Component {
             -moz-osx-font-smoothing: grayscale;
             -webkit-font-smoothing: antialiased;
           }
-  
+
           .links .nav-link,
           .overlay .nav-link {
             padding: 10px;
@@ -196,7 +194,7 @@ class Nav extends Component {
             color: white;
             font-weight: 600;
             font-size: 0.925rem;
-            border-bottom: 3px solid rgba(0,0,0,0.3);
+            border-bottom: 3px solid rgba(0, 0, 0, 0.3);
           }
 
           .overlay .nav-btn {
@@ -216,8 +214,8 @@ class Nav extends Component {
           }
         `}</style>
       </nav>
-    )
+    );
   }
 }
 
-export default Nav
+export default Nav;

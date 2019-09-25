@@ -1,9 +1,7 @@
-import Layout from '../components/layout'
+import Layout from "../components/layout";
 
 export default props => (
-  <Layout
-    title={`Privacy Policy | VendorLink`}
-  >
+  <Layout title={`Privacy Policy | VendorLink`}>
     <section className="container">
       <h1>Privacy Policy</h1>
       <p>We collect data.</p>

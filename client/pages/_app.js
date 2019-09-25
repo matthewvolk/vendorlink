@@ -1,5 +1,5 @@
-import React from 'react';
-import App, { Container } from 'next/app';
+import React from "react";
+import App, { Container } from "next/app";
 import { StripeProvider } from "react-stripe-elements-universal";
 
 class VendorLink extends App {
@@ -19,9 +19,7 @@ class VendorLink extends App {
     return (
       <Container>
         <StripeProvider apiKey="pk_test_TQb9cUvlHIRLrcxaUcNCItyL001rCgG9kd">
-          <Component 
-            {...pageProps} 
-          />
+          <Component {...pageProps} />
         </StripeProvider>
       </Container>
     );

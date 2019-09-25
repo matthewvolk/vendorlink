@@ -1,5 +1,5 @@
-import Link from 'next/link'
-import CustomerRegistration from './customerRegistration'
+import Link from "next/link";
+import CustomerRegistration from "./customerRegistration";
 
 export default props => (
   <>
@@ -7,15 +7,22 @@ export default props => (
       <div className="choose">
         <h1>Register</h1>
         <div className="customer">
-          <CustomerRegistration/>
+          <CustomerRegistration />
         </div>
-        <div className="or"><span className="line">or</span></div>
+        <div className="or">
+          <span className="line">or</span>
+        </div>
         <div className="vendor">
           <Link href={`/register?type=vendor`}>
             <a className="btn">Apply to become a Vendor</a>
           </Link>
         </div>
-        <p>Already have an account? <Link href={`/`}><a>Log In</a></Link></p>
+        <p>
+          Already have an account?{" "}
+          <Link href={`/`}>
+            <a>Log In</a>
+          </Link>
+        </p>
       </div>
     </section>
 
@@ -41,12 +48,12 @@ export default props => (
       }
 
       .or {
-        width: 35%; 
-        text-align: center; 
-        border-bottom: 1px solid lightgrey; 
+        width: 35%;
+        text-align: center;
+        border-bottom: 1px solid lightgrey;
         color: lightgrey;
         line-height: 0.1em;
-        margin: 1.5em 2em 2.125em; 
+        margin: 1.5em 2em 2.125em;
         text-transform: uppercase;
       }
 
@@ -57,8 +64,8 @@ export default props => (
       }
 
       .or .line {
-        background:#fff; 
-        padding:0 10px;
+        background: #fff;
+        padding: 0 10px;
       }
 
       .vendor {
@@ -74,7 +81,7 @@ export default props => (
         color: white;
         font-weight: 600;
         font-size: 1.0625rem;
-        border-bottom: 3px solid rgba(0,0,0,0.3);
+        border-bottom: 3px solid rgba(0, 0, 0, 0.3);
       }
 
       .btn:hover {
@@ -84,8 +91,6 @@ export default props => (
       .btn:active {
         background-color: rgb(31, 85, 140);
       }
-
     `}</style>
   </>
-  
-)
+);

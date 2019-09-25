@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import Link from "next/link";
 
 const Footer = () => (
   <footer>
@@ -10,8 +10,7 @@ const Footer = () => (
         <Link href="/terms">
           <a>Terms and Conditions</a>
         </Link>
-        &nbsp;
-        &nbsp;
+        &nbsp; &nbsp;
         <Link href="/privacy">
           <a>Privacy Policy</a>
         </Link>
@@ -26,7 +25,7 @@ const Footer = () => (
       }
 
       footer {
-        background-color: #FDFDFE;
+        background-color: #fdfdfe;
       }
 
       .container {
@@ -54,6 +53,6 @@ const Footer = () => (
       }
     `}</style>
   </footer>
-)
+);
 
-export default Footer
+export default Footer;

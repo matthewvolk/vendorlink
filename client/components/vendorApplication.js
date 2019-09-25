@@ -3,4 +3,4 @@ export default props => (
     <h1>Apply to become a Vendor</h1>
     <p>Coming Soon 😎</p>
   </section>
-)
+);

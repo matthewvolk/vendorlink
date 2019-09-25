@@ -1,12 +1,14 @@
-import Layout from '../components/layout'
-import { withRouter } from 'next/router'
-import Link from 'next/link'
-import fetch from 'isomorphic-unfetch'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPaperPlane, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
+import Layout from "../components/layout";
+import { withRouter } from "next/router";
+import Link from "next/link";
+import fetch from "isomorphic-unfetch";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faPaperPlane,
+  faExternalLinkAlt
+} from "@fortawesome/free-solid-svg-icons";
 
 const Vendor = withRouter(({ vendor, vendorId }) => {
-
   return (
     <Layout
       title={`${vendor.name} | VendorLink`}
@@ -16,65 +18,152 @@ const Vendor = withRouter(({ vendor, vendorId }) => {
         <div className="hero">
           <div className="title">
             <h1>{vendor.name}</h1>
-            <p className="featured-quote" style={{color: "grey"}}>"I loved working with {vendor.name}!" - Verified Buyer</p>
-            <p className="featured-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi recusandae, obcaecati esse quia deleniti id explicabo autem sed consequatur corrupti molestias, libero aperiam illo odio tempora ipsum. Repellendus, enim cupiditate.</p>
+            <p className="featured-quote" style={{ color: "grey" }}>
+              "I loved working with {vendor.name}!" - Verified Buyer
+            </p>
+            <p className="featured-text">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi
+              recusandae, obcaecati esse quia deleniti id explicabo autem sed
+              consequatur corrupti molestias, libero aperiam illo odio tempora
+              ipsum. Repellendus, enim cupiditate.
+            </p>
           </div>
           <div className="quick-facts">
             <div className="vendorImageContainer">
-              <img className="vendorImage" src="https://i.imgur.com/bRhQqAm.jpg" alt=""/>
+              <img
+                className="vendorImage"
+                src="https://i.imgur.com/bRhQqAm.jpg"
+                alt=""
+              />
             </div>
-            <div className="fact"><strong>Hourly Rate:</strong> ${vendor.rate.toFixed(2)}</div>
-            <hr/>
-            <div className="fact"><strong>Location:</strong> San Diego, CA</div>
-            <hr/>
-            <div className="fact"><strong>Time Zone:</strong> PST</div>
-            <hr/>
-            <div className="fact"><strong>Working Hours:</strong> 9:00 AM PST - 5:00 PM PST</div>
-            <hr/>
-            <div className="fact" style={{display: "flex", flexWrap: "wrap"}}><strong>Skills:</strong>&nbsp;
+            <div className="fact">
+              <strong>Hourly Rate:</strong> ${vendor.rate.toFixed(2)}
+            </div>
+            <hr />
+            <div className="fact">
+              <strong>Location:</strong> San Diego, CA
+            </div>
+            <hr />
+            <div className="fact">
+              <strong>Time Zone:</strong> PST
+            </div>
+            <hr />
+            <div className="fact">
+              <strong>Working Hours:</strong> 9:00 AM PST - 5:00 PM PST
+            </div>
+            <hr />
+            <div className="fact" style={{ display: "flex", flexWrap: "wrap" }}>
+              <strong>Skills:</strong>&nbsp;
               {vendor.skills.map((skill, index) => (
-                <span key={index}>{ (index ? ', ' : '') + skill}</span>
+                <span key={index}>{(index ? ", " : "") + skill}</span>
               ))}
             </div>
             <div className="links">
               <Link href={`/custom-quote?vendor=${vendor.name}`}>
-                <a className="btn green link"><FontAwesomeIcon icon={faPaperPlane} />&nbsp;&nbsp;Contact</a>
+                <a className="btn green link">
+                  <FontAwesomeIcon icon={faPaperPlane} />
+                  &nbsp;&nbsp;Contact
+                </a>
               </Link>
-              <Link href={`${vendor.websiteUrl ? vendor.websiteUrl + '/?ref=vendorlink' : '#'}`}>
-                <a target={`${!vendor.websiteUrl ? '' : '_blank'}`} className={`btn link ${!vendor.websiteUrl ? 'disabled' : 'blue'}`}><FontAwesomeIcon icon={faExternalLinkAlt} />&nbsp;&nbsp; Visit Website</a>
+              <Link
+                href={`${
+                  vendor.websiteUrl
+                    ? vendor.websiteUrl + "/?ref=vendorlink"
+                    : "#"
+                }`}
+              >
+                <a
+                  target={`${!vendor.websiteUrl ? "" : "_blank"}`}
+                  className={`btn link ${
+                    !vendor.websiteUrl ? "disabled" : "blue"
+                  }`}
+                >
+                  <FontAwesomeIcon icon={faExternalLinkAlt} />
+                  &nbsp;&nbsp; Visit Website
+                </a>
               </Link>
             </div>
           </div>
-          <p className="sub-featured-quote" style={{color: "#555", padding: "1em", marginTop: "2em", borderLeft: "5px solid lightgrey"}}>"I loved working with {vendor.name}!" - Verified Buyer</p>
+          <p
+            className="sub-featured-quote"
+            style={{
+              color: "#555",
+              padding: "1em",
+              marginTop: "2em",
+              borderLeft: "5px solid lightgrey"
+            }}
+          >
+            "I loved working with {vendor.name}!" - Verified Buyer
+          </p>
         </div>
       </div>
 
       <div className="container">
-        <h2 style={{margin: "0"}}>Previous Work:</h2>
+        <h2 style={{ margin: "0" }}>Previous Work:</h2>
       </div>
       <div className="gallery">
         <div className="container">
           <div className="image-flex">
-            <img className="work-gallery-item" src="https://cdn.dribbble.com/users/1165321/screenshots/6025182/new_shot_48_2x.png" alt="previous work example" />
-            <img className="work-gallery-item" src="https://cdn.dribbble.com/users/4859/screenshots/5923382/sweep-web_2x.png" alt="previous work example" />
-            <img className="work-gallery-item" src="https://cdn.dribbble.com/users/952958/screenshots/4828084/cart.png" alt="previous work example" />
-            <img className="work-gallery-item" src="https://cdn.dribbble.com/users/235909/screenshots/5833556/dribbble_2x.png" alt="previous work example" />
-            <img className="work-gallery-item" src="https://cdn.dribbble.com/users/1875714/screenshots/5621548/dribbble_2x.png" alt="previous work example" />
+            <img
+              className="work-gallery-item"
+              src="https://cdn.dribbble.com/users/1165321/screenshots/6025182/new_shot_48_2x.png"
+              alt="previous work example"
+            />
+            <img
+              className="work-gallery-item"
+              src="https://cdn.dribbble.com/users/4859/screenshots/5923382/sweep-web_2x.png"
+              alt="previous work example"
+            />
+            <img
+              className="work-gallery-item"
+              src="https://cdn.dribbble.com/users/952958/screenshots/4828084/cart.png"
+              alt="previous work example"
+            />
+            <img
+              className="work-gallery-item"
+              src="https://cdn.dribbble.com/users/235909/screenshots/5833556/dribbble_2x.png"
+              alt="previous work example"
+            />
+            <img
+              className="work-gallery-item"
+              src="https://cdn.dribbble.com/users/1875714/screenshots/5621548/dribbble_2x.png"
+              alt="previous work example"
+            />
           </div>
         </div>
       </div>
 
       <div className="container">
-        <h2 style={{margin: "0"}}>Reviews:</h2>
+        <h2 style={{ margin: "0" }}>Reviews:</h2>
       </div>
       <div className="gallery">
         <div className="container">
           <div className="image-flex">
-            <img className="work-gallery-item" src="https://cdn.dribbble.com/users/644755/screenshots/4723422/rec-3.png" alt="previous work example" />
-            <img className="work-gallery-item" src="https://cdn.dribbble.com/users/644755/screenshots/4723422/rec-3.png" alt="previous work example" />
-            <img className="work-gallery-item" src="https://cdn.dribbble.com/users/644755/screenshots/4723422/rec-3.png" alt="previous work example" />
-            <img className="work-gallery-item" src="https://cdn.dribbble.com/users/644755/screenshots/4723422/rec-3.png" alt="previous work example" />
-            <img className="work-gallery-item" src="https://cdn.dribbble.com/users/644755/screenshots/4723422/rec-3.png" alt="previous work example" />
+            <img
+              className="work-gallery-item"
+              src="https://cdn.dribbble.com/users/644755/screenshots/4723422/rec-3.png"
+              alt="previous work example"
+            />
+            <img
+              className="work-gallery-item"
+              src="https://cdn.dribbble.com/users/644755/screenshots/4723422/rec-3.png"
+              alt="previous work example"
+            />
+            <img
+              className="work-gallery-item"
+              src="https://cdn.dribbble.com/users/644755/screenshots/4723422/rec-3.png"
+              alt="previous work example"
+            />
+            <img
+              className="work-gallery-item"
+              src="https://cdn.dribbble.com/users/644755/screenshots/4723422/rec-3.png"
+              alt="previous work example"
+            />
+            <img
+              className="work-gallery-item"
+              src="https://cdn.dribbble.com/users/644755/screenshots/4723422/rec-3.png"
+              alt="previous work example"
+            />
           </div>
         </div>
       </div>
@@ -95,7 +184,7 @@ const Vendor = withRouter(({ vendor, vendorId }) => {
         }
 
         .vendorImageContainer {
-          display: flex; 
+          display: flex;
           justify-content: space-around;
           margin-bottom: 1.5em;
         }
@@ -180,8 +269,8 @@ const Vendor = withRouter(({ vendor, vendorId }) => {
           overflow: scroll;
         }
 
-        ::-webkit-scrollbar { 
-          display: none; 
+        ::-webkit-scrollbar {
+          display: none;
         }
 
         .image-flex {
@@ -200,14 +289,14 @@ const Vendor = withRouter(({ vendor, vendorId }) => {
           color: white;
           font-weight: 600;
           font-size: 0.925rem;
-          border-bottom: 3px solid rgba(0,0,0,0.3);
+          border-bottom: 3px solid rgba(0, 0, 0, 0.3);
           width: 47.5%;
           box-sizing: border-box;
           margin-top: 1rem;
         }
 
         .green {
-          background-color: rgb(26, 186, 69)
+          background-color: rgb(26, 186, 69);
         }
 
         .green:hover {
@@ -248,7 +337,7 @@ const Vendor = withRouter(({ vendor, vendorId }) => {
         }
       `}</style>
     </Layout>
-  )
+  );
 });
 
 Vendor.getInitialProps = async function(context) {
@@ -259,7 +348,7 @@ Vendor.getInitialProps = async function(context) {
   return {
     vendor,
     vendorId: id
-  }
+  };
 };
 
 export default Vendor;

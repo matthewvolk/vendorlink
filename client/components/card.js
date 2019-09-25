@@ -1,7 +1,7 @@
-import { Component } from 'react'
-import Link from 'next/link'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCaretUp, faCaretDown } from '@fortawesome/free-solid-svg-icons'
+import { Component } from "react";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretUp, faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
 class Card extends Component {
   constructor(props) {
@@ -22,15 +22,15 @@ class Card extends Component {
     }));
   };
 
-  abbreviateNum = (num) => {
+  abbreviateNum = num => {
     /**
      * @todo imitate reddit vote count
      */
 
     return num;
-  }
-  
-  render () {
+  };
+
+  render() {
     return (
       <>
         <div className="card">
@@ -39,19 +39,26 @@ class Card extends Component {
               <div className="arrow blue" onClick={this.rankUp}>
                 <FontAwesomeIcon icon={faCaretUp} size="lg" />
               </div>
-              <div className="count">{this.abbreviateNum(this.state.value)}</div>
+              <div className="count">
+                {this.abbreviateNum(this.state.value)}
+              </div>
               <div className="arrow blue" onClick={this.rankDown}>
                 <FontAwesomeIcon icon={faCaretDown} size="lg" />
               </div>
             </div>
           </div>
-          <Link as={`/vendor/${this.props.slug}`} href={`/vendor?id=${this.props.slug}`}>
+          <Link
+            as={`/vendor/${this.props.slug}`}
+            href={`/vendor?id=${this.props.slug}`}
+          >
             <div className="content">
               <h3 className="title">{this.props.name}</h3>
               <p className="detail">Hourly Rate: ${this.props.rate}</p>
               <div className="tags">
                 {this.props.skills.map((skill, index) => (
-                  <div key={index} className="tag">{skill}</div>
+                  <div key={index} className="tag">
+                    {skill}
+                  </div>
                 ))}
               </div>
             </div>
@@ -63,7 +70,7 @@ class Card extends Component {
             border: 1px solid #d8d8d8;
             margin-bottom: -1px;
             display: flex;
-            background-color: #FDFDFE;
+            background-color: #fdfdfe;
             cursor: pointer;
           }
 
@@ -74,14 +81,14 @@ class Card extends Component {
           .arrows {
             display: flex;
             flex-direction: column;
-            background-color: #F7F8F9;
+            background-color: #f7f8f9;
             cursor: default;
-            margin-right: .33rem;
+            margin-right: 0.33rem;
           }
 
           .container {
             padding: 15px 7.5px;
-            background-color: #F7F8F9;
+            background-color: #f7f8f9;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -94,7 +101,7 @@ class Card extends Component {
             font-weight: 700;
             font-size: 1.15rem;
             cursor: pointer;
-            color: #76797B;
+            color: #76797b;
             padding: 2.5px 5px;
             -webkit-user-select: none; /* webkit (safari, chrome) browsers */
             -moz-user-select: none; /* mozilla browsers */
@@ -107,7 +114,7 @@ class Card extends Component {
           }
 
           .red:hover {
-            color: #FF323A;
+            color: #ff323a;
           }
 
           .arrow:hover {
@@ -147,13 +154,13 @@ class Card extends Component {
           }
 
           .secondary-link {
-            font-size: 0.9rem; 
-            color: rgb(124, 124, 124); 
+            font-size: 0.9rem;
+            color: rgb(124, 124, 124);
             text-decoration: none;
             padding: 5px 7.5px;
             font-weight: 700;
           }
-      
+
           .secondary-link:hover,
           .secondary-link:active {
             background-color: #f2f2f2;
@@ -166,11 +173,11 @@ class Card extends Component {
           }
 
           .tag {
-            border: 1px solid #76797B;
-            color: #76797B;
+            border: 1px solid #76797b;
+            color: #76797b;
             border-radius: 5px;
             font-size: 0.8rem;
-            padding: .2rem;
+            padding: 0.2rem;
             margin: 5px;
             font-weight: 500;
           }
@@ -182,8 +189,8 @@ class Card extends Component {
           }
         `}</style>
       </>
-    )
+    );
   }
 }
 
-export default Card
+export default Card;

@@ -1,101 +1,99 @@
-import { Component } from 'react'
-import Head from '../components/head'
-import Nav from '../components/nav'
-import Footer from '../components/footer'
-import { initGA, logPageView } from '../utils/analytics'
+import { Component } from "react";
+import Head from "../components/head";
+import Nav from "../components/nav";
+import Footer from "../components/footer";
+import { initGA, logPageView } from "../utils/analytics";
 
 class Layout extends Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
 
-  componentDidMount () {
+  componentDidMount() {
     if (!window.GA_INITIALIZED) {
-      initGA()
-      window.GA_INITIALIZED = true
+      initGA();
+      window.GA_INITIALIZED = true;
     }
-    logPageView()
+    logPageView();
   }
 
   render() {
     return (
       <>
-        <Head title={this.props.title} description={this.props.description}/>
-        <Nav/>
-        <main>
-          {this.props.children}
-        </main>
-        <Footer/>
+        <Head title={this.props.title} description={this.props.description} />
+        <Nav />
+        <main>{this.props.children}</main>
+        <Footer />
         {/* test, should see on auth */}
-    
+
         <style jsx global>{`
-          @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500,600,700&display=swap');
-          @import url('https://fonts.googleapis.com/css?family=Hind+Vadodara:300,400,500,600,700|Mukta:300,400,500,600,700&display=swap');
-    
+          @import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500,600,700&display=swap");
+          @import url("https://fonts.googleapis.com/css?family=Hind+Vadodara:300,400,500,600,700|Mukta:300,400,500,600,700&display=swap");
+
           html {
             line-height: 1.15; /* 1 */
             -webkit-text-size-adjust: 100%; /* 2 */
           }
-          
+
           body {
             margin: 0;
-            color: #1C262E;
-            background: #FDFDFE;
+            color: #1c262e;
+            background: #fdfdfe;
             -webkit-font-smoothing: antialiased;
             font-family: "Hind Vadodara", sans-serif;
           }
-          
+
           main {
             display: block;
           }
-          
+
           h1 {
             font-size: 2em;
             margin: 0.67em 0;
           }
-          
+
           hr {
             box-sizing: content-box; /* 1 */
             height: 0; /* 1 */
             overflow: visible; /* 2 */
           }
-          
+
           pre {
             font-family: monospace, monospace; /* 1 */
             font-size: 1em; /* 2 */
           }
-          
+
           a {
             background-color: transparent;
             color: rgb(39, 103, 168);
           }
-    
+
           a:active {
             color: #003563;
           }
-          
+
           abbr[title] {
             border-bottom: none; /* 1 */
             text-decoration: underline; /* 2 */
             text-decoration: underline dotted; /* 2 */
           }
-          
+
           b,
           strong {
             font-weight: bolder;
           }
-          
+
           code,
           kbd,
           samp {
             font-family: monospace, monospace; /* 1 */
             font-size: 1em; /* 2 */
           }
-          
+
           small {
             font-size: 80%;
           }
-          
+
           sub,
           sup {
             font-size: 75%;
@@ -103,19 +101,19 @@ class Layout extends Component {
             position: relative;
             vertical-align: baseline;
           }
-          
+
           sub {
             bottom: -0.25em;
           }
-          
+
           sup {
             top: -0.5em;
           }
-          
+
           img {
             border-style: none;
           }
-          
+
           button,
           input,
           optgroup,
@@ -126,24 +124,26 @@ class Layout extends Component {
             line-height: 1.15; /* 1 */
             margin: 0; /* 2 */
           }
-          
+
           button,
-          input { /* 1 */
+          input {
+            /* 1 */
             overflow: visible;
           }
-          
+
           button,
-          select { /* 1 */
+          select {
+            /* 1 */
             text-transform: none;
           }
-          
+
           button,
           [type="button"],
           [type="reset"],
           [type="submit"] {
             -webkit-appearance: button;
           }
-          
+
           button::-moz-focus-inner,
           [type="button"]::-moz-focus-inner,
           [type="reset"]::-moz-focus-inner,
@@ -151,18 +151,18 @@ class Layout extends Component {
             border-style: none;
             padding: 0;
           }
-          
+
           button:-moz-focusring,
           [type="button"]:-moz-focusring,
           [type="reset"]:-moz-focusring,
           [type="submit"]:-moz-focusring {
             outline: 1px dotted ButtonText;
           }
-    
+
           fieldset {
             padding: 0.35em 0.75em 0.625em;
           }
-          
+
           legend {
             box-sizing: border-box; /* 1 */
             color: inherit; /* 2 */
@@ -171,61 +171,61 @@ class Layout extends Component {
             padding: 0; /* 3 */
             white-space: normal; /* 1 */
           }
-          
+
           progress {
             vertical-align: baseline;
           }
-          
+
           textarea {
             overflow: auto;
           }
-          
+
           [type="checkbox"],
           [type="radio"] {
             box-sizing: border-box; /* 1 */
             padding: 0; /* 2 */
           }
-          
+
           [type="number"]::-webkit-inner-spin-button,
           [type="number"]::-webkit-outer-spin-button {
             height: auto;
           }
-          
+
           /**
           * 1. Correct the odd appearance in Chrome and Safari.
           * 2. Correct the outline style in Safari.
           */
-          
+
           [type="search"] {
             -webkit-appearance: textfield; /* 1 */
             outline-offset: -2px; /* 2 */
           }
-          
+
           [type="search"]::-webkit-search-decoration {
             -webkit-appearance: none;
           }
-    
+
           ::-webkit-file-upload-button {
             -webkit-appearance: button; /* 1 */
             font: inherit; /* 2 */
           }
-    
+
           details {
             display: block;
           }
-    
+
           summary {
             display: list-item;
           }
-          
+
           template {
             display: none;
           }
-    
+
           [hidden] {
             display: none;
           }
-    
+
           html {
             font-size: 16px;
           }
@@ -239,16 +239,16 @@ class Layout extends Component {
               font-size: 18px;
             }
           }
-    
+
           .container {
             max-width: 1200px;
-            margin: 0 auto; 
+            margin: 0 auto;
             padding: 15px 20px;
           }
         `}</style>
       </>
-    )
+    );
   }
 }
 
-export default Layout
+export default Layout;

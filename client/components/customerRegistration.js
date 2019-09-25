@@ -1,17 +1,17 @@
-import { Component } from 'react'
-import Router from 'next/router';
-import fetch from 'isomorphic-unfetch'
-import Link from 'next/link'
+import { Component } from "react";
+import Router from "next/router";
+import fetch from "isomorphic-unfetch";
+import Link from "next/link";
 
 class CustomerRegistration extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      first_name: '',
-      last_name: '',
-      email: '',
-      password: '',
-      confirm_password: '',
+      first_name: "",
+      last_name: "",
+      email: "",
+      password: "",
+      confirm_password: ""
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -32,41 +32,42 @@ class CustomerRegistration extends Component {
     e.preventDefault();
 
     if (this.state.password !== this.state.confirm_password) {
-      alert("Passwords do not match")
+      alert("Passwords do not match");
       return;
     }
 
     fetch(`${process.env.API_URL}/api/v1/users/create`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json"
       },
       body: JSON.stringify({
         first_name: this.state.first_name,
         last_name: this.state.last_name,
         email: this.state.email,
         password: this.state.password
-      }),
+      })
     })
-    .then(res => res.json())
-    .then(json => {
-      console.log(json)
-      /**
-       * @todo instead of passing token as a query param, store cookie on user
-       */
-      Router.push("/dashboard");
-    })
-    .catch(
-      /**
-       * @todo implement button state like checkoutForm component
-       */
-      error => console.error('An error occured, not redirecting the user', error)
-    );
+      .then(res => res.json())
+      .then(json => {
+        console.log(json);
+        /**
+         * @todo instead of passing token as a query param, store cookie on user
+         */
+        Router.push("/dashboard");
+      })
+      .catch(
+        /**
+         * @todo implement button state like checkoutForm component
+         */
+        error =>
+          console.error("An error occured, not redirecting the user", error)
+      );
 
     return;
   }
 
-  render () {
+  render() {
     return (
       <>
         <section className="modal">
@@ -74,79 +75,88 @@ class CustomerRegistration extends Component {
             <form onSubmit={this.handleSubmit}>
               <label>
                 First Name:
-                <br/>
-                <input 
-                  type="text" 
-                  name="first_name" 
-                  value={this.state.first_name} 
-                  onChange={this.handleChange} 
+                <br />
+                <input
+                  type="text"
+                  name="first_name"
+                  value={this.state.first_name}
+                  onChange={this.handleChange}
                   required
                 />
               </label>
-              <br/>
-              <br/>
+              <br />
+              <br />
               <label>
                 Last Name:
-                <br/>
-                <input 
-                  type="text" 
-                  name="last_name" 
-                  value={this.state.last_name} 
-                  onChange={this.handleChange} 
+                <br />
+                <input
+                  type="text"
+                  name="last_name"
+                  value={this.state.last_name}
+                  onChange={this.handleChange}
                   required
                 />
               </label>
-              <br/>
-              <br/>
+              <br />
+              <br />
               <label>
                 Email:
-                <br/>
-                <input 
-                  type="email" 
-                  name="email" 
-                  value={this.state.email} 
-                  onChange={this.handleChange} 
+                <br />
+                <input
+                  type="email"
+                  name="email"
+                  value={this.state.email}
+                  onChange={this.handleChange}
                   required
                 />
               </label>
-              <br/>
-              <br/>
+              <br />
+              <br />
               <label>
                 Password:
-                <br/>
-                <input 
-                  type="password" 
-                  name="password" 
-                  value={this.state.password} 
-                  onChange={this.handleChange} 
+                <br />
+                <input
+                  type="password"
+                  name="password"
+                  value={this.state.password}
+                  onChange={this.handleChange}
                   required
                 />
               </label>
-              <br/>
-              <br/>
+              <br />
+              <br />
               <label>
                 Confirm Password:
-                <br/>
-                <input 
-                  type="password" 
-                  name="confirm_password" 
-                  value={this.state.confirm_password} 
-                  onChange={this.handleChange} 
+                <br />
+                <input
+                  type="password"
+                  name="confirm_password"
+                  value={this.state.confirm_password}
+                  onChange={this.handleChange}
                   required
                 />
               </label>
-              <br/>
-              <br/>
+              <br />
+              <br />
               {/* <p style={{color: "rgb(39, 103, 168)"}}>@todo add password confirmation</p> */}
               {/* <p style={{color: "rgb(39, 103, 168)"}}>@todo CORS for Firefox: Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://localhost:3001/api/v1/auth/user/create. (Reason: missing token ‘content-type’ in CORS header ‘Access-Control-Allow-Headers’ from CORS preflight channel).</p> */}
               <div className="consent">
                 <label htmlFor="terms">
-                  <input type="checkbox" name="" id="terms" required/> By clicking submit you agree to the <Link href={`/terms`}><a>Terms and Conditions</a></Link> and <Link href={`/privacy`}><a>Privacy Policy</a></Link>
+                  <input type="checkbox" name="" id="terms" required /> By
+                  clicking submit you agree to the{" "}
+                  <Link href={`/terms`}>
+                    <a>Terms and Conditions</a>
+                  </Link>{" "}
+                  and{" "}
+                  <Link href={`/privacy`}>
+                    <a>Privacy Policy</a>
+                  </Link>
                 </label>
               </div>
               <div className="consent">
                 <label htmlFor="email-opt">
-                  <input type="checkbox" name="" id="email-opt"/> I don't mind receiving emails with exclusive offers and top talent.
+                  <input type="checkbox" name="" id="email-opt" /> I don't mind
+                  receiving emails with exclusive offers and top talent.
                 </label>
               </div>
               <input type="submit" className="btn" value="Coming Soon" />
@@ -159,12 +169,12 @@ class CustomerRegistration extends Component {
             border-radius: 5px;
             margin: 0em 3em 1em;
             text-align: left;
-            -webkit-box-shadow: 0px 0px 28px 0px rgba(128,128,128,0.1);
-            -moz-box-shadow: 0px 0px 28px 0px rgba(128,128,128,0.1);
-            box-shadow: 0px 0px 28px 0px rgba(128,128,128,0.1);
+            -webkit-box-shadow: 0px 0px 28px 0px rgba(128, 128, 128, 0.1);
+            -moz-box-shadow: 0px 0px 28px 0px rgba(128, 128, 128, 0.1);
+            box-shadow: 0px 0px 28px 0px rgba(128, 128, 128, 0.1);
             box-sizing: border-box;
           }
-          
+
           .consent {
             margin-bottom: 1rem;
           }
@@ -202,7 +212,7 @@ class CustomerRegistration extends Component {
 
           label {
             color: rgb(96, 100, 105);
-          } 
+          }
 
           .btn {
             padding: 10px;
@@ -214,7 +224,7 @@ class CustomerRegistration extends Component {
             border: none;
             cursor: pointer;
             font-size: 1.125rem;
-            border-bottom: 3px solid rgba(0,0,0,0.3);
+            border-bottom: 3px solid rgba(0, 0, 0, 0.3);
           }
 
           .btn:hover {
@@ -226,8 +236,8 @@ class CustomerRegistration extends Component {
           }
         `}</style>
       </>
-    )
+    );
   }
 }
 
-export default CustomerRegistration
+export default CustomerRegistration;
