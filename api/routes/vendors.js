@@ -104,7 +104,7 @@ router.get(
   passport.authenticate("vendor", { session: false }),
   (req, res) => {
     res.send({
-      msg: "Success",
+      message: "Success",
       vendor: req.user
     });
   }
@@ -217,27 +217,30 @@ router.post("/login", (req, res) => {
         if (match) {
           const payload = { id: vendor.id, type: "Vendor" };
           const token = jwt.sign(payload, process.env.VENDOR_SECRET);
-          res.send({ msg: "Successfully created JWT", token });
+          res.send({ message: "Successfully created JWT", token });
         } else {
           res.status(401).send("Incorrect Password!");
         }
       })
       .catch(err =>
         res.status(500).send({
-          msg:
+          message:
             "Something went wrong while comparing your password to the password stored in the vendor database.",
-          err
+          error
         })
       );
   });
 });
 
+/**
+ * @todo Why won't the route below work?
+ */
 router.get(
   "/protected",
   passport.authenticate("vendor", { session: false }),
   (req, res) => {
     res.send({
-      msg: "Success",
+      message: "Success",
       vendor: req.user
     });
   }
