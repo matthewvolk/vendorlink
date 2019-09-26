@@ -110,16 +110,16 @@ router.post("/login", (req, res) => {
         if (match) {
           const payload = { id: user.id, type: "User" };
           const token = jwt.sign(payload, process.env.USER_SECRET);
-          res.send({ msg: "Successfully created JWT", token });
+          res.send({ message: "Successfully created JWT", token });
         } else {
           res.status(401).send("Incorrect Password!");
         }
       })
       .catch(err =>
         res.status(500).send({
-          msg:
+          message:
             "Something went wrong while comparing your password to the password stored in the user database.",
-          err
+          error
         })
       );
   });
@@ -130,7 +130,7 @@ router.get(
   passport.authenticate("user", { session: false }),
   (req, res) => {
     res.send({
-      msg: "Success",
+      message: "Success",
       user: req.user
     });
   }
