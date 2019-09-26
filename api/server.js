@@ -10,6 +10,17 @@ require("./config/passport")(passport);
 /**
  * @todo fix CORS for production, only allow Next.js client for
  * dev, production, and maybe an admin dashboard for coupons etc.
+ *
+ * const originsWhitelist = [ "http://localhost:3000", "https://www.vendorlink.co" ];
+ * const corsOptions = {
+ *  origin: function(origin, callback) {
+ *    const isWhitelisted = originsWhitelist.indexOf(origin) !== -1;
+ *    callback(null, isWhitelisted);
+ *  },
+ *  credentials: true
+ * };
+ *
+ * app.use(cors(corsOptions));
  */
 app.use(cors({ origin: "*", allowedHeaders: "*" }));
 app.use(bodyParser.urlencoded({ extended: false }));
