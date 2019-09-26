@@ -10,6 +10,7 @@ require("./config/passport")(passport);
 /**
  * @todo fix CORS for production, only allow Next.js client for
  * dev, production, and maybe an admin dashboard for coupons etc.
+ * https://medium.com/@electra_chong/what-is-cors-what-is-it-used-for-308cafa4df1a
  *
  * const originsWhitelist = [ "http://localhost:3000", "https://www.vendorlink.co" ];
  * const corsOptions = {
