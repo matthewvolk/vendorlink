@@ -341,13 +341,13 @@ const Vendor = withRouter(({ vendor, vendorId }) => {
 });
 
 Vendor.getInitialProps = async function(context) {
-  let { id } = context.query;
-  const res = await fetch(`${process.env.API_URL}/api/v1/vendors/${id}`);
+  let { slug } = context.query;
+  const res = await fetch(`${process.env.API_URL}/api/v1/vendors/${slug}`);
   const vendor = await res.json();
 
   return {
     vendor,
-    vendorId: id
+    vendorId: slug // remove?
   };
 };
 

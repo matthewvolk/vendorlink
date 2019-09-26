@@ -49,7 +49,7 @@ class Card extends Component {
           </div>
           <Link
             as={`/vendor/${this.props.slug}`}
-            href={`/vendor?id=${this.props.slug}`}
+            href={`/vendor?slug=${this.props.slug}`}
           >
             <div className="content">
               <h3 className="title">{this.props.name}</h3>

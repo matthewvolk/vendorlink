@@ -230,8 +230,8 @@ router.get(
   }
 );
 
-router.get("/:id", (req, res) => {
-  const vendor = data.vendors.filter(vendor => vendor.slug == req.params.id);
+router.get("/:slug", (req, res) => {
+  const vendor = data.vendors.filter(vendor => vendor.slug == req.params.slug);
   res.json(vendor[0]);
 });
 
