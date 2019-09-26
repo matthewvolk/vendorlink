@@ -65,7 +65,7 @@ router.post("/", (req, res) => {
 
         /**
          * @todo https://stripe.com/docs/api/errors/handling
-         * @todo send email notification to Andrea and Matt
+         * @todo send email notification
          * @todo send receipt to customer
          */
       }
