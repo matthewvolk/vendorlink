@@ -51,10 +51,15 @@ class CustomerRegistration extends Component {
       .then(res => res.json())
       .then(json => {
         console.log(json);
+
         /**
-         * @todo instead of passing token as a query param, store cookie on user
-         * @todo if json comes back successful, immediately make another fetch request to /login to get a JWT
+         * @todo Form validation
+         * @todo If json comes back successful, immediately make another fetch request to /login to get a JWT
+         * @todo Create customerLogin form
+         * @todo Refactor customerRegistration, customerLogin, vendorRegi, vendorLogi into one modal or something?
+         * @todo Instead of passing token as a query param, store cookie on user
          */
+
         Router.push("/dashboard");
       })
       .catch(
