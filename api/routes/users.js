@@ -1,6 +1,10 @@
 var express = require("express");
 var router = express.Router();
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const passport = require("passport");
+const models = require("../models/index");
+const User = models.User;
 
 router.post("/create", (req, res) => {
   let hash = bcrypt.hashSync(req.body.password, 10);
@@ -58,5 +62,78 @@ router.post("/create", (req, res) => {
    * Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://localhost:3001/api/v1/auth/user/create. (Reason: CORS request did not succeed).
    */
 });
+
+router.post("/create/v2", (req, res) => {
+  const { first_name, last_name, email, password } = req.body;
+  if (!first_name || !last_name || !email || !password)
+    return res.status(500).send({ message: "Please supply all form fields" });
+
+  User.findOrCreate({
+    where: {
+      email
+    },
+    defaults: {
+      first_name,
+      last_name,
+      password
+    }
+  })
+    .then(([user, created]) => {
+      console.log(
+        user.get({
+          plain: true
+        })
+      );
+      created
+        ? res.status(201).send("User Created!")
+        : res.status(201).send("User already exists, so it was not created.");
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).send({
+        message: "Something went wrong!",
+        err
+      });
+    });
+});
+
+router.post("/login", (req, res) => {
+  if (!req.body.email || !req.body.password) {
+    return res.status(401).send("Missing username or password.");
+  }
+
+  User.findOne({ where: { email: req.body.email } }).then(user => {
+    if (!user) return res.status(500).send("User does not exist in database.");
+    bcrypt
+      .compare(req.body.password, user.get("password"))
+      .then(match => {
+        if (match) {
+          const payload = { id: user.id, type: "User" };
+          const token = jwt.sign(payload, process.env.USER_SECRET);
+          res.send({ msg: "Successfully created JWT", token });
+        } else {
+          res.status(401).send("Incorrect Password!");
+        }
+      })
+      .catch(err =>
+        res.status(500).send({
+          msg:
+            "Something went wrong while comparing your password to the password stored in the user database.",
+          err
+        })
+      );
+  });
+});
+
+router.get(
+  "/protected",
+  passport.authenticate("user", { session: false }),
+  (req, res) => {
+    res.send({
+      msg: "Success",
+      user: req.user
+    });
+  }
+);
 
 module.exports = router;

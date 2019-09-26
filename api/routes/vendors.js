@@ -1,5 +1,10 @@
 var express = require("express");
 var router = express.Router();
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const passport = require("passport");
+const models = require("../models/index");
+const Vendor = models.Vendor;
 
 const data = {
   vendors: [
@@ -94,6 +99,17 @@ const data = {
   ]
 };
 
+router.get(
+  "/protected",
+  passport.authenticate("vendor", { session: false }),
+  (req, res) => {
+    res.send({
+      msg: "Success",
+      vendor: req.user
+    });
+  }
+);
+
 router.get("/", (req, res) => {
   /**
    * @todo
@@ -122,20 +138,109 @@ router.post("/create", (req, res) => {
    */
 });
 
-router.post("/rankup", (req, res) => {
-  /**
-   * @todo
-   * retrieve id of vendor
-   * retrieve id of user
-   * connect to db
-   * add row to UserVendorVotes table
-   */
+router.post("/create/v2", (req, res) => {
+  const {
+    first_name,
+    last_name,
+    email,
+    password,
+    company_name,
+    contact_name,
+    contact_email,
+    website_url,
+    hourly_rate,
+    location,
+    working_hours
+  } = req.body;
+
+  if (
+    !first_name ||
+    !last_name ||
+    !email ||
+    !password ||
+    !company_name ||
+    !contact_name ||
+    !contact_email ||
+    !website_url ||
+    !hourly_rate ||
+    !location ||
+    !working_hours
+  )
+    return res.status(500).send({ message: "Please supply all form fields" });
+
+  Vendor.findOrCreate({
+    where: {
+      email
+    },
+    defaults: {
+      first_name,
+      last_name,
+      password,
+      company_name,
+      contact_name,
+      contact_email,
+      website_url,
+      hourly_rate,
+      location,
+      working_hours
+    }
+  })
+    .then(([vendor, created]) => {
+      console.log(
+        vendor.get({
+          plain: true
+        })
+      );
+      created
+        ? res.status(201).send("Vendor Created!")
+        : res.status(201).send("Vendor already exists, so it was not created.");
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).send({
+        message: "Something went wrong!",
+        err
+      });
+    });
 });
 
-router.post("/rankdown", (req, res) => {
-  /**
-   * @todo see '/rankup' route todo's
-   */
+router.post("/login", (req, res) => {
+  if (!req.body.email || !req.body.password) {
+    return res.status(401).send("Missing username or password.");
+  }
+
+  Vendor.findOne({ where: { email: req.body.email } }).then(vendor => {
+    if (!vendor) return res.status(500).send("Vendor does not exist in db");
+    bcrypt
+      .compare(req.body.password, vendor.get("password"))
+      .then(match => {
+        if (match) {
+          const payload = { id: vendor.id, type: "Vendor" };
+          const token = jwt.sign(payload, process.env.VENDOR_SECRET);
+          res.send({ msg: "Successfully created JWT", token });
+        } else {
+          res.status(401).send("Incorrect Password!");
+        }
+      })
+      .catch(err =>
+        res.status(500).send({
+          msg:
+            "Something went wrong while comparing your password to the password stored in the vendor database.",
+          err
+        })
+      );
+  });
 });
+
+router.get(
+  "/protected",
+  passport.authenticate("vendor", { session: false }),
+  (req, res) => {
+    res.send({
+      msg: "Success",
+      vendor: req.user
+    });
+  }
+);
 
 module.exports = router;

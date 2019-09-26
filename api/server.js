@@ -4,6 +4,8 @@ const express = require("express");
 const app = express();
 const port = 3001;
 const bodyParser = require("body-parser");
+const passport = require("passport");
+require("./config/passport")(passport);
 
 /**
  * @todo fix CORS for production, only allow Next.js client for
@@ -12,6 +14,8 @@ const bodyParser = require("body-parser");
 app.use(cors({ origin: "*", allowedHeaders: "*" }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Test Sequelize connection
 const sequelize = require("./models/index").sequelize;
