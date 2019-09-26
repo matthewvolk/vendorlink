@@ -166,7 +166,7 @@ router.post("/create/v2", (req, res) => {
     !location ||
     !working_hours
   )
-    return res.status(500).send({ message: "Please supply all form fields" });
+    return res.status(400).send({ message: "Please supply all form fields" });
 
   Vendor.findOrCreate({
     where: {

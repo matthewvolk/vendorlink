@@ -66,7 +66,7 @@ router.post("/create", (req, res) => {
 router.post("/create/v2", (req, res) => {
   const { first_name, last_name, email, password } = req.body;
   if (!first_name || !last_name || !email || !password)
-    return res.status(500).send({ message: "Please supply all form fields" });
+    return res.status(400).send({ message: "Please supply all form fields" });
 
   User.findOrCreate({
     where: {
