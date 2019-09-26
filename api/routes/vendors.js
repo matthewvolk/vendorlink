@@ -99,17 +99,6 @@ const data = {
   ]
 };
 
-router.get(
-  "/protected",
-  passport.authenticate("vendor", { session: false }),
-  (req, res) => {
-    res.send({
-      message: "Success",
-      vendor: req.user
-    });
-  }
-);
-
 router.get("/", (req, res) => {
   /**
    * @todo
@@ -118,11 +107,6 @@ router.get("/", (req, res) => {
    * build a JSON object like data above
    */
   res.json(data);
-});
-
-router.get("/:id", (req, res) => {
-  const vendor = data.vendors.filter(vendor => vendor.slug == req.params.id);
-  res.json(vendor[0]);
 });
 
 router.post("/create", (req, res) => {
@@ -245,5 +229,10 @@ router.get(
     });
   }
 );
+
+router.get("/:id", (req, res) => {
+  const vendor = data.vendors.filter(vendor => vendor.slug == req.params.id);
+  res.json(vendor[0]);
+});
 
 module.exports = router;
