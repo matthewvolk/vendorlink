@@ -53,6 +53,7 @@ class CustomerRegistration extends Component {
         console.log(json);
         /**
          * @todo instead of passing token as a query param, store cookie on user
+         * @todo if json comes back successful, immediately make another fetch request to /login to get a JWT
          */
         Router.push("/dashboard");
       })
