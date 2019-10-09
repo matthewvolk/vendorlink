@@ -1,7 +1,8 @@
-var express = require("express");
-var router = express.Router();
+const express = require("express");
+const router = express.Router();
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const yup = require("yup");
 const passport = require("passport");
 const models = require("../models/index");
 const Vendor = models.Vendor;
@@ -123,102 +124,114 @@ router.post("/create", (req, res) => {
 });
 
 router.post("/create/v2", (req, res) => {
-  const {
-    first_name,
-    last_name,
-    email,
-    password,
-    company_name,
-    contact_name,
-    contact_email,
-    website_url,
-    hourly_rate,
-    location,
-    working_hours
-  } = req.body;
+  let schema = yup.object().shape({
+    first_name: yup.string().required(),
+    last_name: yup.string().required(),
+    email: yup.string().required(),
+    password: yup.string().required(),
+    company_name: yup.string().required(),
+    contact_name: yup.string().required(),
+    contact_email: yup.string().required(),
+    website_url: yup.string().required(),
+    hourly_rate: yup.string().required(),
+    location: yup.string().required(),
+    working_hours: yup.string().required(),
+  });
 
-  if (
-    !first_name ||
-    !last_name ||
-    !email ||
-    !password ||
-    !company_name ||
-    !contact_name ||
-    !contact_email ||
-    !website_url ||
-    !hourly_rate ||
-    !location ||
-    !working_hours
-  )
-    return res.status(400).send({ message: "Please supply all form fields" });
+  schema
+    .validate(req.body)
+    .then(value => {
+      const {
+        first_name,
+        last_name,
+        email,
+        password,
+        company_name,
+        contact_name,
+        contact_email,
+        website_url,
+        hourly_rate,
+        location,
+        working_hours
+      } = value;
 
-  Vendor.findOrCreate({
-    where: {
-      email
-    },
-    defaults: {
-      first_name,
-      last_name,
-      password,
-      company_name,
-      contact_name,
-      contact_email,
-      website_url,
-      hourly_rate,
-      location,
-      working_hours
-    }
-  })
-    .then(([vendor, created]) => {
-      console.log(
-        vendor.get({
-          plain: true
+      Vendor.findOrCreate({
+        where: {
+          email
+        },
+        defaults: {
+          first_name,
+          last_name,
+          password,
+          company_name,
+          contact_name,
+          contact_email,
+          website_url,
+          hourly_rate,
+          location,
+          working_hours
+        }
+      })
+        .then(([vendor, created]) => {
+          console.log(
+            vendor.get({
+              plain: true
+            })
+          );
+          created
+            ? res.status(201).send({ success: "Vendor Created!" })
+            : res.status(201).send({ error: "Vendor already exists, so it was not created." });
         })
-      );
-      created
-        ? res.status(201).send("Vendor Created!")
-        : res.status(201).send("Vendor already exists, so it was not created.");
+        .catch(err => {
+          console.log(err);
+          res.status(500).send({
+            message: "Something went wrong creating this vendor.",
+            err
+          });
+        });
     })
     .catch(err => {
-      console.log(err);
-      res.status(500).send({
-        message: "Something went wrong!",
-        err
-      });
-    });
+      return res.status(400).send({ error: { type: err.name, message: err.message, criteria: err.type } });
+    })
 });
 
 router.post("/login", (req, res) => {
-  if (!req.body.email || !req.body.password) {
-    return res.status(401).send("Missing username or password.");
-  }
-
-  Vendor.findOne({ where: { email: req.body.email } }).then(vendor => {
-    if (!vendor) return res.status(500).send("Vendor does not exist in db");
-    bcrypt
-      .compare(req.body.password, vendor.get("password"))
-      .then(match => {
-        if (match) {
-          const payload = { id: vendor.id, type: "Vendor" };
-          const token = jwt.sign(payload, process.env.VENDOR_SECRET);
-          res.send({ message: "Successfully created JWT", token });
-        } else {
-          res.status(401).send("Incorrect Password!");
-        }
-      })
-      .catch(err =>
-        res.status(500).send({
-          message:
-            "Something went wrong while comparing your password to the password stored in the vendor database.",
-          error
-        })
-      );
+  let schema = yup.object().shape({
+    email: yup.string().required(),
+    password: yup.string().required()
   });
+
+  schema.validate(req.body)
+    .then(valid => {
+      const { email, password } = valid
+
+      Vendor.findOne({ where: { email } }).then(vendor => {
+        if (!vendor) return res.status(500).send({ error: "Vendor with those credentials does not exist in the database" });
+        bcrypt
+          .compare(password, vendor.get("password"))
+          .then(match => {
+            if (match) {
+              const payload = { id: vendor.id, type: "Vendor" };
+              const token = jwt.sign(payload, process.env.VENDOR_SECRET);
+              res.send({ message: "Successfully created JWT", token });
+            } else {
+              res.status(401).send({ error: "Incorrect Password!" });
+            }
+          })
+          .catch(err =>
+            res.status(500).send({
+              message:
+                "Something went wrong comparing your password to the password stored in the vendor database.",
+              error
+            })
+          );
+      });
+    })
+    .catch(err => {
+      return res.status(401).send({ error: { type: err.name, message: err.message, criteria: err.type } });
+    })
 });
 
-/**
- * @todo Why won't the route below work?
- */
 router.get(
   "/protected",
   passport.authenticate("vendor", { session: false }),
